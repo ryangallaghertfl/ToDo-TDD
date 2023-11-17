@@ -83,11 +83,11 @@
 				A1158CBB2B078BA30016B353 /* AppDelegate.swift */,
 				A1158CBD2B078BA30016B353 /* SceneDelegate.swift */,
 				A1158CBF2B078BA30016B353 /* ViewController.swift */,
+				A14EC80C2B07ACE80012F5D4 /* ToDoItem.swift */,
 				A1158CC12B078BA30016B353 /* Main.storyboard */,
 				A1158CC42B078BA40016B353 /* Assets.xcassets */,
 				A1158CC62B078BA40016B353 /* LaunchScreen.storyboard */,
 				A1158CC92B078BA40016B353 /* Info.plist */,
-				A14EC80C2B07ACE80012F5D4 /* ToDoItem.swift */,
 			);
 			path = "ToDo-TDD";
 			sourceTree = "<group>";
