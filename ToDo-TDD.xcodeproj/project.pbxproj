@@ -13,7 +13,8 @@
 		A1158CC32B078BA30016B353 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1158CC12B078BA30016B353 /* Main.storyboard */; };
 		A1158CC52B078BA40016B353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1158CC42B078BA40016B353 /* Assets.xcassets */; };
 		A1158CC82B078BA40016B353 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1158CC62B078BA40016B353 /* LaunchScreen.storyboard */; };
-		A1158CD32B078BA40016B353 /* ToDo_TDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1158CD22B078BA40016B353 /* ToDo_TDDTests.swift */; };
+		A14EC80B2B07AC2D0012F5D4 /* ToDoItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC80A2B07AC2D0012F5D4 /* ToDoItemTests.swift */; };
+		A14EC80D2B07ACE80012F5D4 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC80C2B07ACE80012F5D4 /* ToDoItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,8 @@
 		A1158CC72B078BA40016B353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1158CC92B078BA40016B353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1158CCE2B078BA40016B353 /* ToDo-TDDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ToDo-TDDTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1158CD22B078BA40016B353 /* ToDo_TDDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo_TDDTests.swift; sourceTree = "<group>"; };
+		A14EC80A2B07AC2D0012F5D4 /* ToDoItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemTests.swift; sourceTree = "<group>"; };
+		A14EC80C2B07ACE80012F5D4 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				A1158CC42B078BA40016B353 /* Assets.xcassets */,
 				A1158CC62B078BA40016B353 /* LaunchScreen.storyboard */,
 				A1158CC92B078BA40016B353 /* Info.plist */,
+				A14EC80C2B07ACE80012F5D4 /* ToDoItem.swift */,
 			);
 			path = "ToDo-TDD";
 			sourceTree = "<group>";
@@ -92,7 +95,7 @@
 		A1158CD12B078BA40016B353 /* ToDo-TDDTests */ = {
 			isa = PBXGroup;
 			children = (
-				A1158CD22B078BA40016B353 /* ToDo_TDDTests.swift */,
+				A14EC80A2B07AC2D0012F5D4 /* ToDoItemTests.swift */,
 			);
 			path = "ToDo-TDDTests";
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			files = (
 				A1158CC02B078BA30016B353 /* ViewController.swift in Sources */,
 				A1158CBC2B078BA30016B353 /* AppDelegate.swift in Sources */,
+				A14EC80D2B07ACE80012F5D4 /* ToDoItem.swift in Sources */,
 				A1158CBE2B078BA30016B353 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1158CD32B078BA40016B353 /* ToDo_TDDTests.swift in Sources */,
+				A14EC80B2B07AC2D0012F5D4 /* ToDoItemTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
