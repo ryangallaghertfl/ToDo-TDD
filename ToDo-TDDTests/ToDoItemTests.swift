@@ -41,6 +41,23 @@ final class ToDoItemTests: XCTestCase {
         let item = ToDoItem(title: "Dummy Title", location: dummyLocation)
         XCTAssertEqual(item.location?.name, dummyLocation.name)
     }
+    
+    func test_ToDoItem_assertsEqual_asPropertiesAreSame() {
+        let someLocation = Location(name: "Some Name")
+        let item1 = ToDoItem(title: "Test", itemDescription: "Description", timestamp: 123456789, location: someLocation)
+        let item2 = ToDoItem(title: "Test", itemDescription: "Description", timestamp: 123456789, location: someLocation)
+
+        XCTAssertEqual(item1, item2, "ToDoItems should be equal")
+    }
+    
+    func test_ToDoItem_assertsNotEqual_asPropertiesAreDifferent() {
+        let someLocation = Location(name: "Some Name")
+        let otherLocation = Location(name: "Other name")
+        let item1 = ToDoItem(title: "Test", itemDescription: "Description", timestamp: 123456789, location: someLocation)
+        let item2 = ToDoItem(title: "Test", itemDescription: "Description", timestamp: 987654321, location: otherLocation)
+
+        XCTAssertNotEqual(item1, item2, "ToDoItems should not be equal as properties differ")
+    }
 
 
 }
