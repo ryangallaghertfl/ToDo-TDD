@@ -15,6 +15,7 @@
 		A1158CC82B078BA40016B353 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1158CC62B078BA40016B353 /* LaunchScreen.storyboard */; };
 		A14EC80B2B07AC2D0012F5D4 /* ToDoItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC80A2B07AC2D0012F5D4 /* ToDoItemTests.swift */; };
 		A14EC80D2B07ACE80012F5D4 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC80C2B07ACE80012F5D4 /* ToDoItem.swift */; };
+		A14EC80F2B07B3710012F5D4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC80E2B07B3710012F5D4 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		A1158CCE2B078BA40016B353 /* ToDo-TDDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ToDo-TDDTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14EC80A2B07AC2D0012F5D4 /* ToDoItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemTests.swift; sourceTree = "<group>"; };
 		A14EC80C2B07ACE80012F5D4 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		A14EC80E2B07B3710012F5D4 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				A1158CC42B078BA40016B353 /* Assets.xcassets */,
 				A1158CC62B078BA40016B353 /* LaunchScreen.storyboard */,
 				A1158CC92B078BA40016B353 /* Info.plist */,
+				A14EC80E2B07B3710012F5D4 /* Location.swift */,
 			);
 			path = "ToDo-TDD";
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			files = (
 				A1158CC02B078BA30016B353 /* ViewController.swift in Sources */,
 				A1158CBC2B078BA30016B353 /* AppDelegate.swift in Sources */,
+				A14EC80F2B07B3710012F5D4 /* Location.swift in Sources */,
 				A14EC80D2B07ACE80012F5D4 /* ToDoItem.swift in Sources */,
 				A1158CBE2B078BA30016B353 /* SceneDelegate.swift in Sources */,
 			);
