@@ -19,7 +19,7 @@ final class LocationTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func test_Location_init_setsCoordinate() throws {
+    func test_Location_init_ShouldSetCoordinate_AssertsEqual() throws {
         let coordinate = CLLocationCoordinate2D(latitude: 1, longitude: 2)
         
         let location = Location(name: "", coordinate: coordinate)
@@ -28,7 +28,7 @@ final class LocationTests: XCTestCase {
         XCTAssertEqual(resultCoordinate.longitude, 2, accuracy: 0.000_001)
     }
     
-    func test_Location_init_setsName() {
+    func test_Location_init_ShouldSetName_AssertsEqual() {
         let location = Location(name: "Dummy")
         XCTAssertEqual(location.name, "Dummy")
     }

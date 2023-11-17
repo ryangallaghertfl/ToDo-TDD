@@ -18,17 +18,17 @@ final class ToDoItemTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func test_ToDoItem_init_whenGivenTitle_setsTitle() {
+    func test_ToDoItem_init_whenGivenTitle_ShouldSetExpectedTitle_Equal() {
         let item = ToDoItem(title: "Dummy")
         XCTAssertEqual(item.title, "Dummy")
     }
     
-    func test_ToDoItem_init_whenGivenDescription_setsDescription() {
+    func test_ToDoItem_init_whenGivenDescription_ShouldSetExpectedDescription_Equal() {
         let item = ToDoItem(title: "Dummy", itemDescription: "Dummy Description")
         XCTAssertEqual(item.itemDescription, "Dummy Description")
     }
     
-    func test_ToDoItem_init_setsTimestamp() throws {
+    func test_ToDoItem_init_ShouldSetExpectedTimestamp() throws {
         //added throws due to unwrap, timestamp is optional
         let dummyTimestamp: TimeInterval = 42.0
         let item = ToDoItem(title: "Dummy", timestamp: dummyTimestamp)
@@ -36,13 +36,13 @@ final class ToDoItemTests: XCTestCase {
         XCTAssertEqual(timestamp, dummyTimestamp, accuracy: 0.000_001)
     }
     
-    func test_ToDoItem_init_whenGivenLocation_setsLocation() {
+    func test_ToDoItem_init_whenGivenLocation_ShouldSetExpectedLocation_Equal() {
         let dummyLocation = Location(name: "Dummy Name")
         let item = ToDoItem(title: "Dummy Title", location: dummyLocation)
         XCTAssertEqual(item.location?.name, dummyLocation.name)
     }
     
-    func test_ToDoItem_assertsEqual_asPropertiesAreSame() {
+    func test_ToDoItem_ShouldAssertEqual_asPropertiesAreSame() {
         let someLocation = Location(name: "Some Name")
         let item1 = ToDoItem(title: "Test", itemDescription: "Description", timestamp: 123456789, location: someLocation)
         let item2 = ToDoItem(title: "Test", itemDescription: "Description", timestamp: 123456789, location: someLocation)
@@ -50,7 +50,7 @@ final class ToDoItemTests: XCTestCase {
         XCTAssertEqual(item1, item2, "ToDoItems should be equal")
     }
     
-    func test_ToDoItem_assertsNotEqual_asPropertiesAreDifferent() {
+    func test_ToDoItem_ShouldAssertNotEqual_asPropertiesAreDifferent() {
         let someLocation = Location(name: "Some Name")
         let otherLocation = Location(name: "Other name")
         let item1 = ToDoItem(title: "Test", itemDescription: "Description", timestamp: 123456789, location: someLocation)
