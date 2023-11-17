@@ -11,11 +11,13 @@ struct ToDoItem {
     let title: String
     let itemDescription: String?
     let timestamp: TimeInterval?
+    let location: Location?
     
     //default value for itemDescription and timestamp
-    init(title: String, itemDescription: String? = nil, timestamp: TimeInterval? = nil) {
+    init(title: String, itemDescription: String? = nil, timestamp: TimeInterval? = nil, location: Location? = nil) {
         self.title = title
         self.itemDescription = itemDescription
         self.timestamp = timestamp
+        self.location = location
     }
 }
