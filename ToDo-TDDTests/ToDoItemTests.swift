@@ -36,8 +36,10 @@ final class ToDoItemTests: XCTestCase {
         XCTAssertEqual(timestamp, dummyTimestamp, accuracy: 0.000_001)
     }
     
-    func test_Location_init_whenGivenLocation_setsLocation() {
+    func test_ToDoItem_init_whenGivenLocation_setsLocation() {
         let dummyLocation = Location(name: "Dummy Name")
+        let item = ToDoItem(title: "Dummy Title", location: dummyLocation)
+        XCTAssertEqual(item.location?.name, dummyLocation.name)
     }
 
 
