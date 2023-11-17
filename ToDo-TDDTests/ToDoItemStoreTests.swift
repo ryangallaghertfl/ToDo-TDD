@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Combine
 @testable import ToDo_TDD
 
 final class ToDoItemStoreTests: XCTestCase {
@@ -20,6 +21,22 @@ final class ToDoItemStoreTests: XCTestCase {
     
     func test_ToDoItemStore_add_shouldPublishChange() {
         let sut = ToDoItemStore()
+        //expectation tests async code as it waits for callbacks
+        let publisherExpectation = expectation(description: "Wait for publisher in \(#file)") //why we need this expectation
+        var receivedItems: [ToDoItem] = [] //store to todoitems
+        let token = sut.itemPublisher //subbing to publisher
+            .dropFirst() //drops first published item because we don't needed it
+            .sink { items in // subs to the publisher, received items is passed in but the param name is omitted by enclosure; at this point the async code in the test is fone
+                receivedItems = items
+                publisherExpectation.fulfill() //fulfill tells the test we don't need to wait anymore
+            }
+        
+        let toDoItem = ToDoItem(title: "Dummy")
+        sut.add(toDoItem)
+        
+        wait(for: [publisherExpectation], timeout: 1) //tells test to wait until expectations are fulfilled, if they are not fulfilled then test fails
+        token.cancel() //we cancel the publisher
+        XCTAssertEqual(receivedItems.first?.title, toDoItem.title)
     }
 
 }
