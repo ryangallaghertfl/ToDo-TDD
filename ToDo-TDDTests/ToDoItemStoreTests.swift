@@ -19,7 +19,7 @@ final class ToDoItemStoreTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func test_ToDoItemStore_add_shouldPublishChange() {
+    func test_ToDoItemStore_add_shouldPublishChange_AssertEqual() {
         let sut = ToDoItemStore()
         //expectation tests async code as it waits for callbacks
         let publisherExpectation = expectation(description: "Wait for publisher in \(#file)") //why we need this expectation
@@ -36,7 +36,7 @@ final class ToDoItemStoreTests: XCTestCase {
         
         wait(for: [publisherExpectation], timeout: 1) //tells test to wait until expectations are fulfilled, if they are not fulfilled then test fails
         token.cancel() //we cancel the publisher
-        XCTAssertEqual(receivedItems.first?.title, toDoItem.title)
+        XCTAssertEqual(receivedItems, [toDoItem])
     }
 
 }
