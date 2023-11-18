@@ -13,6 +13,7 @@ struct ToDoItem {
     let itemDescription: String?
     let timestamp: TimeInterval?
     let location: Location?
+    var done = false
     
     //default value for itemDescription and timestamp
     init(title: String, itemDescription: String? = nil, timestamp: TimeInterval? = nil, location: Location? = nil) {
