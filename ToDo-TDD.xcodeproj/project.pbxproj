@@ -19,6 +19,7 @@
 		A14EC8112B07B54A0012F5D4 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC8102B07B54A0012F5D4 /* LocationTests.swift */; };
 		A14EC8132B07CC7D0012F5D4 /* ToDoItemStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC8122B07CC7D0012F5D4 /* ToDoItemStoreTests.swift */; };
 		A14EC8152B07CCE40012F5D4 /* ToDoItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC8142B07CCE40012F5D4 /* ToDoItemStore.swift */; };
+		A14EC8172B09224E0012F5D4 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC8162B09224E0012F5D4 /* Coordinate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A14EC8102B07B54A0012F5D4 /* LocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
 		A14EC8122B07CC7D0012F5D4 /* ToDoItemStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemStoreTests.swift; sourceTree = "<group>"; };
 		A14EC8142B07CCE40012F5D4 /* ToDoItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemStore.swift; sourceTree = "<group>"; };
+		A14EC8162B09224E0012F5D4 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				A1158CC62B078BA40016B353 /* LaunchScreen.storyboard */,
 				A1158CC92B078BA40016B353 /* Info.plist */,
 				A14EC80E2B07B3710012F5D4 /* Location.swift */,
+				A14EC8162B09224E0012F5D4 /* Coordinate.swift */,
 			);
 			path = "ToDo-TDD";
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A14EC8172B09224E0012F5D4 /* Coordinate.swift in Sources */,
 				A1158CC02B078BA30016B353 /* ViewController.swift in Sources */,
 				A1158CBC2B078BA30016B353 /* AppDelegate.swift in Sources */,
 				A14EC80F2B07B3710012F5D4 /* Location.swift in Sources */,
