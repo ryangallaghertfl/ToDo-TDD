@@ -45,7 +45,21 @@ final class ToDoItemStoreTests: XCTestCase {
     }
     
     func test_ToDoItemStore_init_shouldLoadPreviousToDoItems() {
-        var sut1: ToDoItemStore? = ToDoItemStore(fileName: "dummy_store")
+        var sut1: ToDoItemStore? =
+        ToDoItemStore(fileName: "dummy_store")
+        let publisherExpectation = expectation(description: "Wait for publisher in \(#file)")
+        let toDoItem = ToDoItem(title: "Dummy Title")
+        sut1?.add(toDoItem) //add item to store
+        sut1 = nil //destroy store
+        let sut2 = ToDoItemStore(fileName: "dummy_store") //create new store
+        var result: [ToDoItem]?
+        let token = sut2.itemPublisher.sink { value in //sub to its publisher
+            result = value
+            publisherExpectation.fulfill()
+        }
+        wait(for: [publisherExpectation], timeout: 1)
+        token.cancel()
+        XCTAssertEqual(result, [toDoItem])
     }
 
 }
