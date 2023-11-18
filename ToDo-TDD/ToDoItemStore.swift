@@ -13,6 +13,8 @@ class ToDoItemStore {
     //Failure type set to Never means publisher can never fail
     var itemPublisher = CurrentValueSubject<[ToDoItem], Never>([])
     
+    private let fileName: String
+    
     //private var holds the ToDoItems
     private var items: [ToDoItem] = [] {
         didSet {
@@ -22,6 +24,7 @@ class ToDoItemStore {
     }
     
     init(fileName: String = "todoitems") {
+        self.fileName = fileName
     }
     
     func add(_ item: ToDoItem) {
