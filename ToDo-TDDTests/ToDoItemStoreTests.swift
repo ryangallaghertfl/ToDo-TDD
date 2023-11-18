@@ -43,6 +43,10 @@ final class ToDoItemStoreTests: XCTestCase {
       let doneItems = receivedItems.filter({ $0.done })
       XCTAssertEqual(doneItems, [toDoItem])
     }
+    
+    func test_ToDoItemStore_init_shouldLoadPreviousToDoItems() {
+        var sut1: ToDoItemStore? = ToDoItemStore(fileName: "dummy_store")
+    }
 
 }
 
