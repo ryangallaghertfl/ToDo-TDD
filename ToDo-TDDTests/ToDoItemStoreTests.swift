@@ -31,16 +31,17 @@ final class ToDoItemStoreTests: XCTestCase {
     }
     
     func test_ToDoItemStore_check_shouldPublishChangeInDoneItems_AssertsEqual() throws {
-        let sut = ToDoItemStore()
-        let toDoItem = ToDoItem(title: "Dummy")
-        sut.add(toDoItem)
-        sut.add(ToDoItem(title: "Dummy 2"))
-        let receivedItems = try wait(for: sut.itemPublisher) {
-            sut.check(toDoItem)
-        }
-        
-        let doneItems = receivedItems.filter({$0.done})
-        XCTAssertEqual(doneItems, [toDoItem]) //result is array with only todo item we checked
+      let toDoItem = ToDoItem(title: "Dummy")
+      var sut = ToDoItemStore()
+      sut.add(toDoItem)
+      sut.add(ToDoItem(title: "Dummy 2"))
+
+      let receivedItems = try wait(for: sut.itemPublisher) {
+        sut.check(toDoItem)
+      }
+
+      let doneItems = receivedItems.filter({ $0.done })
+      XCTAssertEqual(doneItems, [toDoItem])
     }
 
 }
