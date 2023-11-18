@@ -36,8 +36,11 @@ final class ToDoItemStoreTests: XCTestCase {
         sut.add(toDoItem)
         sut.add(ToDoItem(title: "Dummy 2"))
         let receivedItems = try wait(for: sut.itemPublisher) {
-        sut.check(toDoItem)
-    }
+            sut.check(toDoItem)
+        }
+        
+        let doneItems = receivedItems.filter({$0.done})
+        XCTAssertEqual(doneItems, [toDoItem]) //result is array with only todo item we checked
     }
 
 }

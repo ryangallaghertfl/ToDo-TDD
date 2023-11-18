@@ -24,4 +24,8 @@ class ToDoItemStore {
     func add(_ item: ToDoItem) {
         items.append(item)
     }
+    
+    func check(_ item: ToDoItem) {
+        items.append(ToDoItem(title: ""))
+    }
 }
