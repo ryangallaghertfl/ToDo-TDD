@@ -21,6 +21,9 @@ class ToDoItemStore {
         }
     }
     
+    init(fileName: String = "todoitems") {
+    }
+    
     func add(_ item: ToDoItem) {
         items.append(item)
     }
