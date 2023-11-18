@@ -30,7 +30,7 @@ final class ToDoItemStoreTests: XCTestCase {
         XCTAssertEqual(receivedItems, [toDoItem])
     }
     
-    func test_ToDoItemStore_check_shouldPublishChangeInDoneItems() throws {
+    func test_ToDoItemStore_check_shouldPublishChangeInDoneItems_AssertsEqual() throws {
         let sut = ToDoItemStore()
         let toDoItem = ToDoItem(title: "Dummy")
         sut.add(toDoItem)

@@ -26,6 +26,10 @@ class ToDoItemStore {
     }
     
     func check(_ item: ToDoItem) {
-        items.append(ToDoItem(title: ""))
+        var mutableItem = item
+        mutableItem.done = true
+        if let index = items.firstIndex(of: item){
+            items[index] = mutableItem //sets new value, which will notify subs
+        }
     }
 }
