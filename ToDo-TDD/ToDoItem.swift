@@ -26,8 +26,16 @@ struct ToDoItem {
     }
 }
 
+//MARK: conforms to Equatable
+
 extension ToDoItem: Equatable {
     static func == (lhs: ToDoItem, rhs: ToDoItem) -> Bool {
         return lhs.id == rhs.id
     }
+}
+
+//MARK: conforms to Codable
+
+extension ToDoItem: Codable {
+    
 }
