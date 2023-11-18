@@ -31,11 +31,3 @@ extension Location: Equatable {
 extension Location: Codable {
     
 }
-
-//MARK: CLLocationCoordinate2D conforms to Equatable
-
-extension CLLocationCoordinate2D: Equatable {
-    public static func == (lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
-        return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
-    }
-}
