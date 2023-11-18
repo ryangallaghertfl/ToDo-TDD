@@ -10,18 +10,19 @@ import Combine
 @testable import ToDo_TDD
 
 final class ToDoItemStoreTests: XCTestCase {
+    
+    var sut: ToDoItemStore!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut = ToDoItemStore()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
     }
     
     func test_ToDoItemStore_add_shouldPublishChange_AssertEqual() throws {
         //marked throws so if error thrown, it reports test failure
-        let sut = ToDoItemStore()
         let toDoItem = ToDoItem(title: "Dummy")
         let receivedItems = try wait(for: sut.itemPublisher) //in case wait method throws
         {
@@ -32,7 +33,6 @@ final class ToDoItemStoreTests: XCTestCase {
     
     func test_ToDoItemStore_check_shouldPublishChangeInDoneItems_AssertsEqual() throws {
       let toDoItem = ToDoItem(title: "Dummy")
-      var sut = ToDoItemStore()
       sut.add(toDoItem)
       sut.add(ToDoItem(title: "Dummy 2"))
 
