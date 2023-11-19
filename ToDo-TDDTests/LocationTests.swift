@@ -20,7 +20,7 @@ final class LocationTests: XCTestCase {
     }
     
     func test_Location_init_ShouldSetCoordinate_AssertsEqual() throws {
-        let coordinate = CLLocationCoordinate2D(latitude: 1, longitude: 2)
+        let coordinate = Coordinate(latitude: 1, longitude: 2)
         
         let location = Location(name: "", coordinate: coordinate)
         let resultCoordinate = try XCTUnwrap(location.coordinate)
