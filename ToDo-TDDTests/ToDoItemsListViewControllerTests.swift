@@ -42,5 +42,12 @@ final class ToDoItemsListViewControllerTests: XCTestCase {
         let result = sut.tableView.numberOfRows(inSection: 0)
         XCTAssertEqual(result, 1)
     }
+    
+    func test_ToDoItemsListVC_GivenNumberOfRows_whenTwoItemsAreSent_shouldReturnTwo()
+    {
+        toDoItemStoreMock.itemPublisher.send([ToDoItem(title: "dummy 1"), ToDoItem(title: "dummy 2")])
+        let result = sut.tableView.numberOfRows(inSection: 0)
+        XCTAssertEqual(result, 2)
+    }
 
 }
