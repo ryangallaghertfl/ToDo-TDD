@@ -26,5 +26,10 @@ final class ToDoItemsListViewControllerTests: XCTestCase {
     func test_ToDoItemsListVC_shouldLoadFromStoryBoard_VCShouldBeSetup() {
         XCTAssertNotNil(sut)
     }
+    
+    func test_ToDoItemsListVC_shouldHaveTableViewForToDoItems() {
+        //checks that the tableview is a descendant of parent view
+        XCTAssertTrue(sut.tableView.isDescendant(of: sut.view))
+    }
 
 }
