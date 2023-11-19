@@ -23,6 +23,7 @@
 		A14EC8192B0A55DC0012F5D4 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC8182B0A55DC0012F5D4 /* FileManagerExtension.swift */; };
 		A14EC81B2B0A6D8B0012F5D4 /* ToDoItemsListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC81A2B0A6D8B0012F5D4 /* ToDoItemsListViewControllerTests.swift */; };
 		A14EC81D2B0A6E1F0012F5D4 /* ToDoItemsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC81C2B0A6E1F0012F5D4 /* ToDoItemsListViewController.swift */; };
+		A14EC81F2B0A72640012F5D4 /* ToDoItemStoreProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC81E2B0A72640012F5D4 /* ToDoItemStoreProtocolMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		A14EC8182B0A55DC0012F5D4 /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 		A14EC81A2B0A6D8B0012F5D4 /* ToDoItemsListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemsListViewControllerTests.swift; sourceTree = "<group>"; };
 		A14EC81C2B0A6E1F0012F5D4 /* ToDoItemsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemsListViewController.swift; sourceTree = "<group>"; };
+		A14EC81E2B0A72640012F5D4 /* ToDoItemStoreProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemStoreProtocolMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				A14EC8102B07B54A0012F5D4 /* LocationTests.swift */,
 				A14EC8122B07CC7D0012F5D4 /* ToDoItemStoreTests.swift */,
 				A14EC81A2B0A6D8B0012F5D4 /* ToDoItemsListViewControllerTests.swift */,
+				A14EC81E2B0A72640012F5D4 /* ToDoItemStoreProtocolMock.swift */,
 			);
 			path = "ToDo-TDDTests";
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				A14EC8132B07CC7D0012F5D4 /* ToDoItemStoreTests.swift in Sources */,
 				A14EC8112B07B54A0012F5D4 /* LocationTests.swift in Sources */,
 				A14EC80B2B07AC2D0012F5D4 /* ToDoItemTests.swift in Sources */,
+				A14EC81F2B0A72640012F5D4 /* ToDoItemStoreProtocolMock.swift in Sources */,
 				A14EC81B2B0A6D8B0012F5D4 /* ToDoItemsListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

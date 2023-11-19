@@ -68,6 +68,14 @@ class ToDoItemStore {
     }
 }
 
+//MARK: conforming to ToDoItemStoreProtocol to perform test double
+
+extension ToDoItemStore: ToDoItemStoreProtocol {
+    //check already implemented above
+}
+
+//MARK: protocol for test double purposes
+
 protocol ToDoItemStoreProtocol {
     var itemPublisher: CurrentValueSubject<[ToDoItem], Never> { get set }
     
