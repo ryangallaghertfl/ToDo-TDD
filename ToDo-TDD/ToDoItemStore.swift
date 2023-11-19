@@ -38,6 +38,7 @@ class ToDoItemStore {
         mutableItem.done = true
         if let index = items.firstIndex(of: item){
             items[index] = mutableItem //sets new value, which will notify subs
+            saveItems()
         }
     }
     

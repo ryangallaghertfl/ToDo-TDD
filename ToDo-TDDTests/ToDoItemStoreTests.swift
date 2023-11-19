@@ -103,7 +103,7 @@ extension XCTestCase {
         let publisherExpectation = expectation(description: "Wait for publisher in \(#file)") //description is why we need this expectation
         var result: T.Output?
         let token = publisher //subbing to publisher
-            .dropFirst() //drops first published item because we don't needed it
+            .dropFirst() //drops first published item because we don't needed it, as that would be the initial state
             .sink { value in // subs to the publisher, received items is passed in but the param name is omitted by enclosure; at this point the async code in the test is done
                 result = value
                 publisherExpectation.fulfill() //fulfill tells the test we don't need to wait anymore
