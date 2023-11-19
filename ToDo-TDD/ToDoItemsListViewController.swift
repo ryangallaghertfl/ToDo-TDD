@@ -10,5 +10,5 @@ import UIKit
 class ToDoItemsListViewController: UIViewController {
    
     @IBOutlet var tableView: UITableView!
-    
+    var toDoItemStore: ToDoItemStoreProtocol?
 }
