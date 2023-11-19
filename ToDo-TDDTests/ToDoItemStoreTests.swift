@@ -45,7 +45,6 @@ final class ToDoItemStoreTests: XCTestCase {
     }
     
     func test_ToDoItemStore_init_shouldLoadPreviousToDoItems() throws {
-        try XCTSkipIf(true, "Just test Coordinate change")
         
         var sut1: ToDoItemStore? =
         ToDoItemStore(fileName: "dummy_store")

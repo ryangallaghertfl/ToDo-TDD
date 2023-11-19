@@ -38,4 +38,20 @@ class ToDoItemStore {
             items[index] = mutableItem //sets new value, which will notify subs
         }
     }
+    
+    private func saveItems() {
+        if let url = FileManager.default
+            .urls(for: .documentDirectory,
+                  in: .userDomainMask)
+                .first?
+            .appendingPathComponent(fileName) {
+            do {
+                //encodes items array to JSON
+                let data = try JSONEncoder().encode(items)
+                try data.write(to: url)
+            } catch {
+                print("error: \(error)")
+            }
+        }
+    }
 }
