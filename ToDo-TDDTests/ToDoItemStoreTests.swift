@@ -97,6 +97,7 @@ final class ToDoItemStoreTests: XCTestCase {
 
 //MARK: extension to XCTestCase
 
+//helper method to improve failure message
 extension XCTestCase {
     func wait<T: Publisher>(for publisher: T, afterChange change: () -> Void, file: StaticString = #file, line: UInt = #line) throws -> T.Output where T.Failure == Never {
         //expectation tests async code as it waits for callbacks
