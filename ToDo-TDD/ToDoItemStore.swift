@@ -25,6 +25,7 @@ class ToDoItemStore {
     
     init(fileName: String = "todoitems") {
         self.fileName = fileName
+        loadItems()
     }
     
     func add(_ item: ToDoItem) {
@@ -39,6 +40,20 @@ class ToDoItemStore {
             items[index] = mutableItem //sets new value, which will notify subs
         }
     }
+    
+    private func loadItems() {
+        if let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+            .first?
+            .appendingPathComponent(fileName) {
+            do {
+                let data = try Data(contentsOf: url)
+                items = try JSONDecoder().decode([ToDoItem].self, from: data)
+            } catch {
+                print("error: \(error)")
+            }
+        }
+    }
+        
     
     private func saveItems() {
         if let url = FileManager.default
