@@ -19,9 +19,8 @@ final class ToDoItemStoreTests: XCTestCase {
 
     override func tearDownWithError() throws {
         sut = nil
-        if let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("dummy_store") {
+        let url = FileManager.default.documentsURL(name: "dummy_store")
             try? FileManager.default.removeItem(at: url)
-        }
     }
     
     func test_ToDoItemStore_add_shouldPublishChange_AssertEqual() throws {
