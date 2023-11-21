@@ -47,13 +47,15 @@ class ToDoItemsListViewController: UIViewController {
         //UITableViewDiffableDataSource manages table view updates via NSDiffableDataSourceSnapshot
         var snapshot = NSDiffableDataSourceSnapshot<Section, ToDoItem>()
         //to update the table view with new data, we need to create a snapshot and set it up with the new data
-        snapshot.appendSections([.main])
-        snapshot.appendItems(items)
+        snapshot.appendSections([.todo, .done])
+        snapshot.appendItems(items.filter({ false == $0.done }), toSection: .todo)
+        snapshot.appendItems(items.filter({ $0.done }), toSection: .done)
         dataSource?.apply(snapshot)
     }
     
     enum Section {
-        case main
+        case todo
+        case done
     }
     
 }
