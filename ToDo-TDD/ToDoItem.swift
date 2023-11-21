@@ -39,3 +39,12 @@ extension ToDoItem: Equatable {
 extension ToDoItem: Codable {
     
 }
+
+//MARK: conforms to Hashable, so we can use UITableViewDiffableDataSource API
+
+extension ToDoItem: Hashable {
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
