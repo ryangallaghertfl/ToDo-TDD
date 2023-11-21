@@ -14,6 +14,7 @@ class ToDoItemsListViewController: UIViewController {
     var toDoItemStore: ToDoItemStoreProtocol?
     private var items: [ToDoItem] = [] //holds items sent by item publisher
     private var token: AnyCancellable? //holds ref to subscriber subscribed by the publisher
+    let dateFormatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,14 @@ extension ToDoItemsListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath) as! ToDoItemCell
         
         let item = items[indexPath.row]
+        
         cell.titleLabel.text = item.title
+        
+        if let timestamp = item.timestamp {
+            let date = Date(timeIntervalSince1970: timestamp)
+            cell.dateLabel.text = dateFormatter.string(from: date)
+        }
+        
         return cell
     }
 }
