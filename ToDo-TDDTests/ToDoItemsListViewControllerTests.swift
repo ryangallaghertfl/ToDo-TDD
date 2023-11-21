@@ -98,4 +98,8 @@ final class ToDoItemsListViewControllerTests: XCTestCase {
         let result = sut.tableView.numberOfSections
         XCTAssertEqual(result, 2)
     }
+    
+    func test_ToDoItemsListVC_didSelectCellAt_shouldCallDelegate() throws {
+        let delegateMock = ToDoItemsListViewControllerProtocolMock()
+    }
 }

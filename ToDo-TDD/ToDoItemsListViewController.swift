@@ -59,3 +59,9 @@ class ToDoItemsListViewController: UIViewController {
     }
     
 }
+
+//MARK: create protocol for handling mocks
+protocol ToDoItemsListViewControllerProtocol {
+    
+    func selectToDoItem(_ viewController: UIViewController, item: ToDoItem)
+}
