@@ -23,11 +23,15 @@ final class ToDoItemCellTests: XCTestCase {
     func test_ToDoItemCell_ShouldHaveTitleLabelSubview_ReturnsTrue() {
         let subview = sut.titleLabel
         XCTAssertTrue(subview.isDescendant(of: sut.contentView))
-        
     }
     
-    func test_ToDoItemListVC_ShouldhaveDateLabelSubview_ReturnsTrue() {
+    func test_ToDoItemCell_ShouldhaveDateLabelSubview_ReturnsTrue() {
         let subview = sut.dateLabel
+        XCTAssertTrue(subview.isDescendant(of: sut.contentView))
+    }
+    
+    func test_ToDoItemCell_hasLocationLabelSubview_ReturnsTrue() {
+        let subview = sut.locationLabel
         XCTAssertTrue(subview.isDescendant(of: sut.contentView))
     }
 
