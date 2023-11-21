@@ -49,5 +49,20 @@ final class ToDoItemsListViewControllerTests: XCTestCase {
         let result = sut.tableView.numberOfRows(inSection: 0)
         XCTAssertEqual(result, 2)
     }
+    
+    func test_ToDoItemsListVC_cellForRowAt_shouldReturnCellWithTitle() throws
+    {
+        let titleUnderTest = "dummy 1"
+        //publish a list with one to-do item using our test double
+        toDoItemStoreMock.itemPublisher.send([ToDoItem(title: titleUnderTest)])
+        let tableView = try XCTUnwrap(sut.tableView)
+        
+        let indexPath = IndexPath(row: 0, section: 0)
+        //execute the tableView(_:cellForRowAt:) method
+        //returned table view cell should have a label showing the title of the to-do item sent by the publisher
+        let cell = try XCTUnwrap(tableView.dataSource?.tableView(tableView, cellForRowAt: indexPath) as? ToDoItemCell)
+        
+        XCTAssertEqual(cell.titleLabel.text, titleUnderTest)
+    }
 
 }

@@ -24,6 +24,7 @@
 		A14EC81B2B0A6D8B0012F5D4 /* ToDoItemsListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC81A2B0A6D8B0012F5D4 /* ToDoItemsListViewControllerTests.swift */; };
 		A14EC81D2B0A6E1F0012F5D4 /* ToDoItemsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC81C2B0A6E1F0012F5D4 /* ToDoItemsListViewController.swift */; };
 		A14EC81F2B0A72640012F5D4 /* ToDoItemStoreProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC81E2B0A72640012F5D4 /* ToDoItemStoreProtocolMock.swift */; };
+		A14EC8212B0CCBB00012F5D4 /* TodoItemCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC8202B0CCBB00012F5D4 /* TodoItemCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		A14EC81A2B0A6D8B0012F5D4 /* ToDoItemsListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemsListViewControllerTests.swift; sourceTree = "<group>"; };
 		A14EC81C2B0A6E1F0012F5D4 /* ToDoItemsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemsListViewController.swift; sourceTree = "<group>"; };
 		A14EC81E2B0A72640012F5D4 /* ToDoItemStoreProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemStoreProtocolMock.swift; sourceTree = "<group>"; };
+		A14EC8202B0CCBB00012F5D4 /* TodoItemCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				A14EC8162B09224E0012F5D4 /* Coordinate.swift */,
 				A14EC8182B0A55DC0012F5D4 /* FileManagerExtension.swift */,
 				A14EC81C2B0A6E1F0012F5D4 /* ToDoItemsListViewController.swift */,
+				A14EC8202B0CCBB00012F5D4 /* TodoItemCellTableViewCell.swift */,
 			);
 			path = "ToDo-TDD";
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				A14EC80F2B07B3710012F5D4 /* Location.swift in Sources */,
 				A14EC80D2B07ACE80012F5D4 /* ToDoItem.swift in Sources */,
 				A14EC8192B0A55DC0012F5D4 /* FileManagerExtension.swift in Sources */,
+				A14EC8212B0CCBB00012F5D4 /* TodoItemCellTableViewCell.swift in Sources */,
 				A14EC81D2B0A6E1F0012F5D4 /* ToDoItemsListViewController.swift in Sources */,
 				A14EC8152B07CCE40012F5D4 /* ToDoItemStore.swift in Sources */,
 				A1158CBE2B078BA30016B353 /* SceneDelegate.swift in Sources */,
