@@ -16,9 +16,21 @@ class ToDoItemsListViewController: UIViewController {
     private var token: AnyCancellable? //holds ref to subscriber subscribed by the publisher
     let dateFormatter = DateFormatter()
     
+    private var dataSource: UITableViewDiffableDataSource<Section, ToDoItem>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
+        //we initialise a diffable data source for the table view.
+        dataSource = UITableViewDiffableDataSource<Section, ToDoItem>(tableView: tableView, cellProvider: { [weak self] tableView, indexPath, item in
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath) as! ToDoItemCell
+            cell.titleLabel.text = item.title
+            
+            if let timestamp = item.timestamp {
+                let date = Date(timeIntervalSince1970: timestamp)
+                cell.dateLabel.text = self?.dateFormatter.string(from: date)
+            }
+            return cell
+            })
         
         //cell reuse capability for performance
         tableView.register(ToDoItemCell.self, forCellReuseIdentifier: "ToDoItemCell")
@@ -30,30 +42,17 @@ class ToDoItemsListViewController: UIViewController {
         })
     }
     
-}
-
-//MARK: extending to conform to UITableViewDataSource
-
-extension ToDoItemsListViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+    private func update(with items: [ToDoItem]) {
+        //UITableViewDiffableDataSource manages table view updates via NSDiffableDataSourceSnapshot
+        var snapshot = NSDiffableDataSourceSnapshot<Section, ToDoItem>()
+        //to update the table view with new data, we need to create a snapshot and set it up with the new data
+        snapshot.appendSections([.main])
+        snapshot.appendItems(items)
+        dataSource?.apply(snapshot)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        //now uses reuse capability
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath) as! ToDoItemCell
-        
-        let item = items[indexPath.row]
-        
-        cell.titleLabel.text = item.title
-        
-        if let timestamp = item.timestamp {
-            let date = Date(timeIntervalSince1970: timestamp)
-            cell.dateLabel.text = dateFormatter.string(from: date)
-        }
-        
-        return cell
+    enum Section {
+        case main
     }
+    
 }
