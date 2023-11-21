@@ -50,7 +50,7 @@ final class ToDoItemsListViewControllerTests: XCTestCase {
         XCTAssertEqual(result, 2)
     }
     
-    func test_ToDoItemsListVC_cellForRowAt_shouldReturnCellWithTitle() throws
+    func test_ToDoItemsListVC_cellForRowAt_shouldReturnCellWithTitle_Asserts_Equal() throws
     {
         let titleUnderTest = "dummy 1"
         //publish a list with one to-do item using our test double
@@ -64,5 +64,18 @@ final class ToDoItemsListViewControllerTests: XCTestCase {
         
         XCTAssertEqual(cell.titleLabel.text, titleUnderTest)
     }
+    
+    func test_ToDoItemsListVC_cellForRowAt_Sends2ToDoItems_shouldReturnSecondCellWithTitle_AssertsEqual()
+    throws
+    {
+        let titleUnderTest = "dummy 2"
+        toDoItemStoreMock.itemPublisher.send([ToDoItem(title: "dummy 1"), ToDoItem(title: titleUnderTest)])
+        let tableView = try XCTUnwrap(sut.tableView)
+        let indexPath = IndexPath(row: 1, section: 0)
+        let cell = try XCTUnwrap(
+            tableView.dataSource?.tableView(tableView,cellForRowAt: indexPath) as? ToDoItemCell)
+        
+        XCTAssertEqual(cell.titleLabel.text, titleUnderTest)
+        }
 
 }
