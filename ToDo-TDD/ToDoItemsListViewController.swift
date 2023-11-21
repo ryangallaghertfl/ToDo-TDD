@@ -41,7 +41,9 @@ extension ToDoItemsListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = ToDoItemCell()
+        //now uses reuse capability
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath) as! ToDoItemCell
+        
         let item = items[indexPath.row]
         cell.titleLabel.text = item.title
         return cell
