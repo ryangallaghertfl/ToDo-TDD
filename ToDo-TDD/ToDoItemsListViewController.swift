@@ -39,6 +39,7 @@ class ToDoItemsListViewController: UIViewController {
         token = toDoItemStore?.itemPublisher
         .sink(receiveValue: { [weak self] items in
         self?.items = items //store items in our array
+        self?.update(with: items) //call update method with new snapshot of data source
         })
     }
     
