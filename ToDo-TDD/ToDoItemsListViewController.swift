@@ -18,6 +18,8 @@ class ToDoItemsListViewController: UIViewController {
     
     private var dataSource: UITableViewDiffableDataSource<Section, ToDoItem>?
     
+    var delegate: ToDoItemsListViewControllerProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //we initialise a diffable data source for the table view.
@@ -41,6 +43,7 @@ class ToDoItemsListViewController: UIViewController {
         self?.items = items //store items in our array
         self?.update(with: items) //call update method with new snapshot of data source
         })
+        tableView.delegate = self
     }
     
     private func update(with items: [ToDoItem]) {
@@ -58,6 +61,18 @@ class ToDoItemsListViewController: UIViewController {
         case done
     }
     
+}
+
+//MARK: extends ToDoITemsListViewController to conforms to UITableViewDelegate
+
+extension ToDoItemsListViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let item = items[indexPath.row]
+        
+        delegate?.selectToDoItem(self, item: item)
+    }
 }
 
 //MARK: create protocol for handling mocks
