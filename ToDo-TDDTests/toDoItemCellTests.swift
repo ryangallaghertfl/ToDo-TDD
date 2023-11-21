@@ -8,7 +8,7 @@
 import XCTest
 @testable import ToDo_TDD
 
-final class toDoItemCellTests: XCTestCase {
+final class ToDoItemCellTests: XCTestCase {
     
     var sut: ToDoItemCell!
 
@@ -26,7 +26,7 @@ final class toDoItemCellTests: XCTestCase {
         
     }
     
-    func test_ToDoItemListVC_ShouldhaveDateLabelSubview() {
+    func test_ToDoItemListVC_ShouldhaveDateLabelSubview_ReturnsTrue() {
         let subview = sut.dateLabel
         XCTAssertTrue(subview.isDescendant(of: sut.contentView))
     }
