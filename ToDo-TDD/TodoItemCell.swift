@@ -7,6 +7,6 @@
 
 import UIKit
 
-class TodoItemCell: UITableViewCell {
+class ToDoItemCell: UITableViewCell {
     let titleLabel = UILabel()
 }
