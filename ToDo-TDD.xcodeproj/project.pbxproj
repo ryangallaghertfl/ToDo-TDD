@@ -25,6 +25,7 @@
 		A14EC81D2B0A6E1F0012F5D4 /* ToDoItemsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC81C2B0A6E1F0012F5D4 /* ToDoItemsListViewController.swift */; };
 		A14EC81F2B0A72640012F5D4 /* ToDoItemStoreProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC81E2B0A72640012F5D4 /* ToDoItemStoreProtocolMock.swift */; };
 		A14EC8232B0CCE230012F5D4 /* TodoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC8222B0CCE230012F5D4 /* TodoItemCell.swift */; };
+		A14EC8252B0CD63D0012F5D4 /* toDoItemCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC8242B0CD63D0012F5D4 /* toDoItemCellTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		A14EC81C2B0A6E1F0012F5D4 /* ToDoItemsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemsListViewController.swift; sourceTree = "<group>"; };
 		A14EC81E2B0A72640012F5D4 /* ToDoItemStoreProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemStoreProtocolMock.swift; sourceTree = "<group>"; };
 		A14EC8222B0CCE230012F5D4 /* TodoItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemCell.swift; sourceTree = "<group>"; };
+		A14EC8242B0CD63D0012F5D4 /* toDoItemCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDoItemCellTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				A14EC8122B07CC7D0012F5D4 /* ToDoItemStoreTests.swift */,
 				A14EC81A2B0A6D8B0012F5D4 /* ToDoItemsListViewControllerTests.swift */,
 				A14EC81E2B0A72640012F5D4 /* ToDoItemStoreProtocolMock.swift */,
+				A14EC8242B0CD63D0012F5D4 /* toDoItemCellTests.swift */,
 			);
 			path = "ToDo-TDDTests";
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			files = (
 				A14EC8132B07CC7D0012F5D4 /* ToDoItemStoreTests.swift in Sources */,
 				A14EC8112B07B54A0012F5D4 /* LocationTests.swift in Sources */,
+				A14EC8252B0CD63D0012F5D4 /* toDoItemCellTests.swift in Sources */,
 				A14EC80B2B07AC2D0012F5D4 /* ToDoItemTests.swift in Sources */,
 				A14EC81F2B0A72640012F5D4 /* ToDoItemStoreProtocolMock.swift in Sources */,
 				A14EC81B2B0A6D8B0012F5D4 /* ToDoItemsListViewControllerTests.swift in Sources */,
