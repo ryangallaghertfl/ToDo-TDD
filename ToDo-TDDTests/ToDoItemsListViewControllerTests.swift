@@ -77,10 +77,5 @@ final class ToDoItemsListViewControllerTests: XCTestCase {
         
         XCTAssertEqual(cell.titleLabel.text, titleUnderTest)
     }
-    
-    func test_ToDoItemListVC_ShouldhaveDateLabelSubview() {
-        let subview = sut.dateLabel
-        XCTAssertTrue(subview.isDescendant(of: sut.contentView))
-    }
 
 }
