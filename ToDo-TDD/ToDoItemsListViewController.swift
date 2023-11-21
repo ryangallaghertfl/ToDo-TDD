@@ -19,6 +19,8 @@ class ToDoItemsListViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         
+        //cell reuse capability for performance
+        tableView.register(ToDoItemCell.self, forCellReuseIdentifier: "ToDoItemCell")
         
         //subscribe to changes sent by the item publisher of toDoItemStore
         token = toDoItemStore?.itemPublisher
