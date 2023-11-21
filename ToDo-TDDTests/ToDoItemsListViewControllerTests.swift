@@ -90,5 +90,12 @@ final class ToDoItemsListViewControllerTests: XCTestCase {
     
         XCTAssertEqual(cell.dateLabel.text, sut.dateFormatter.string(from: date))
     }
-
+    
+    func test_ToDoITemsListVC_GivenNumberOfSections_shouldReturnTwo_AssertsTrue() {
+        var doneItem = ToDoItem(title: "dummy 2")
+        doneItem.done = true
+        toDoItemStoreMock.itemPublisher.send([ToDoItem(title: "dummy 1"), doneItem])
+        let result = sut.tableView.numberOfSections
+        XCTAssertEqual(result, 2)
+    }
 }
