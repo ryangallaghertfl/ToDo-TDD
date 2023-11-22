@@ -38,5 +38,10 @@ final class ToDoItemsDetailsViewControllerTests: XCTestCase {
         XCTAssertTrue(subview.isDescendant(of: sut.view))
     }
     
+    func test_ToDoItemDetailsVC_view_shouldHaveDescriptionLabel_assertsTrue() throws {
+        let subview = try XCTUnwrap(sut.descriptionLabel)
+        XCTAssertTrue(subview.isDescendant(of: sut.view))
+    }
+    
 }
 
