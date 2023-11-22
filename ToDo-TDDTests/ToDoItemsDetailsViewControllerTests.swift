@@ -110,6 +110,7 @@ final class ToDoItemsDetailsViewControllerTests: XCTestCase {
         sut.toDoItem = toDoItem
         let storeMock = ToDoItemStoreProtocolMock()
         sut.toDoItemStore = storeMock
+        //send the .touchUpInside action to the target of the Done button
         sut.doneButton.sendActions(for: .touchUpInside)
         XCTAssertEqual(storeMock.checkLastCallArgument, toDoItem)
     }

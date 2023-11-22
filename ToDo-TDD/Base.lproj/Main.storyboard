@@ -47,6 +47,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Done"/>
+                                <connections>
+                                    <action selector="checkItem:" destination="Bmh-4F-fT1" eventType="touchUpInside" id="A2C-fU-ARI"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="YEE-lp-Efd">
                                 <rect key="frame" x="76" y="80" width="240" height="384"/>

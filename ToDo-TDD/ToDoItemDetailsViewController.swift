@@ -23,6 +23,8 @@ class ToDoItemDetailsViewController: UIViewController {
     
     let dateFormatter = DateFormatter()
     
+    var toDoItemStore: ToDoItemStoreProtocol?
+    
     var toDoItem: ToDoItem? {
         didSet {
             titleLabel.text = toDoItem?.title
@@ -46,7 +48,12 @@ class ToDoItemDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func checkItem(_ sender: UIButton) {
+        if let toDoItem = toDoItem {
+            toDoItemStore?.check(toDoItem)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
