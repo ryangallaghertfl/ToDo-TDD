@@ -75,5 +75,12 @@ final class ToDoItemsDetailsViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.descriptionLabel.text, description)
     }
     
+    func test_ToDoItemDetailsVC_settingToDoItem_shouldUpdateLocationLabel_assertsTrue() {
+        let location = "dummy location"
+        let toDoItem = ToDoItem( title: "dummy title", location: Location(name: location))
+        sut.toDoItem = toDoItem
+        XCTAssertEqual(sut.locationLabel.text, location)
+    }
+    
 }
 
