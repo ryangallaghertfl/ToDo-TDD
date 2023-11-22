@@ -90,7 +90,13 @@ final class ToDoItemsDetailsViewControllerTests: XCTestCase {
         let center = sut.mapView.centerCoordinate
         XCTAssertEqual(center.latitude, latitude, accuracy: 0.000_01)
         XCTAssertEqual(center.longitude, longitude, accuracy: 0.000_01)
-        
+    }
+    
+    func test_ToDoItemDetailsVC__settingToDoItem_shouldUpdateButtonState_assertsFalse() {
+        var toDoItem = ToDoItem(title: "dummy title")
+        toDoItem.done = true
+        sut.toDoItem = toDoItem
+        XCTAssertFalse(sut.doneButton.isEnabled)
     }
     
 }
