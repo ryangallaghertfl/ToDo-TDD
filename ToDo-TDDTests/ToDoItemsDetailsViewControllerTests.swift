@@ -48,9 +48,16 @@ final class ToDoItemsDetailsViewControllerTests: XCTestCase {
         XCTAssertTrue(subview.isDescendant(of: sut.view))
     }
     
-    func test_ToDoItemDetailsVC_view_shouldHaveDoneButton() throws {
+    func test_ToDoItemDetailsVC_view_shouldHaveDoneButton_assertsTrue() throws {
         let subview = try XCTUnwrap(sut.doneButton)
         XCTAssertTrue(subview.isDescendant(of: sut.view))
+    }
+    
+    func test_ToDoItemDetailsVC_settingToDoItem_shouldUpdateTitleLabel_assertsTrue() {
+        let title = "dummy title"
+        let toDoItem = ToDoItem(title: title)
+        sut.toDoItem = toDoItem
+        XCTAssertEqual(sut.titleLabel.text, title)
     }
     
 }
