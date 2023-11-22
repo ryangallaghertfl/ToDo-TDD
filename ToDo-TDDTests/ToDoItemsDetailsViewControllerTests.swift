@@ -67,5 +67,13 @@ final class ToDoItemsDetailsViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.dateLabel.text, sut.dateFormatter.string(from: date))
     }
     
+    func test_ToDoItemDetailsVC_settingToDoItem_shouldUpdateDescriptionLabel_assertsTrue() 
+    {
+        let description = "dummy discription"
+        let toDoItem = ToDoItem(title: "dummy title", itemDescription: description)
+        sut.toDoItem = toDoItem
+        XCTAssertEqual(sut.descriptionLabel.text, description)
+    }
+    
 }
 
