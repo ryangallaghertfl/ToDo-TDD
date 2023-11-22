@@ -30,6 +30,7 @@ class ToDoItemDetailsViewController: UIViewController {
                 dateLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: timestamp))
             }
             descriptionLabel.text = toDoItem?.itemDescription
+            locationLabel.text = toDoItem?.location?.name
         }
     }
 
