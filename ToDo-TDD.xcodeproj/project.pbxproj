@@ -30,6 +30,9 @@
 		A16E8B392B0E4837008619D8 /* ToDoItemsDetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B382B0E4837008619D8 /* ToDoItemsDetailsViewControllerTests.swift */; };
 		A16E8B3B2B0E48D1008619D8 /* ToDoItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B3A2B0E48D1008619D8 /* ToDoItemDetailsViewController.swift */; };
 		A16E8B3E2B0E65A6008619D8 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = A16E8B3D2B0E65A6008619D8 /* ViewInspector */; };
+		A16E8B402B0E673A008619D8 /* ToDoItemInputViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B3F2B0E673A008619D8 /* ToDoItemInputViewTests.swift */; };
+		A16E8B422B0E6796008619D8 /* ToDoItemInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B412B0E6796008619D8 /* ToDoItemInputView.swift */; };
+		A16E8B442B0E67E8008619D8 /* ToDoItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B432B0E67E8008619D8 /* ToDoItemData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,9 @@
 		A16E8B362B0D00D9008619D8 /* ToDoItemsListViewControllerProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemsListViewControllerProtocolMock.swift; sourceTree = "<group>"; };
 		A16E8B382B0E4837008619D8 /* ToDoItemsDetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemsDetailsViewControllerTests.swift; sourceTree = "<group>"; };
 		A16E8B3A2B0E48D1008619D8 /* ToDoItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemDetailsViewController.swift; sourceTree = "<group>"; };
+		A16E8B3F2B0E673A008619D8 /* ToDoItemInputViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemInputViewTests.swift; sourceTree = "<group>"; };
+		A16E8B412B0E6796008619D8 /* ToDoItemInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemInputView.swift; sourceTree = "<group>"; };
+		A16E8B432B0E67E8008619D8 /* ToDoItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,8 @@
 				A14EC81C2B0A6E1F0012F5D4 /* ToDoItemsListViewController.swift */,
 				A14EC8222B0CCE230012F5D4 /* TodoItemCell.swift */,
 				A16E8B3A2B0E48D1008619D8 /* ToDoItemDetailsViewController.swift */,
+				A16E8B412B0E6796008619D8 /* ToDoItemInputView.swift */,
+				A16E8B432B0E67E8008619D8 /* ToDoItemData.swift */,
 			);
 			path = "ToDo-TDD";
 			sourceTree = "<group>";
@@ -140,6 +148,7 @@
 				A14EC8242B0CD63D0012F5D4 /* toDoItemCellTests.swift */,
 				A16E8B362B0D00D9008619D8 /* ToDoItemsListViewControllerProtocolMock.swift */,
 				A16E8B382B0E4837008619D8 /* ToDoItemsDetailsViewControllerTests.swift */,
+				A16E8B3F2B0E673A008619D8 /* ToDoItemInputViewTests.swift */,
 			);
 			path = "ToDo-TDDTests";
 			sourceTree = "<group>";
@@ -253,6 +262,7 @@
 			files = (
 				A14EC8232B0CCE230012F5D4 /* TodoItemCell.swift in Sources */,
 				A14EC8172B09224E0012F5D4 /* Coordinate.swift in Sources */,
+				A16E8B422B0E6796008619D8 /* ToDoItemInputView.swift in Sources */,
 				A1158CC02B078BA30016B353 /* ViewController.swift in Sources */,
 				A16E8B3B2B0E48D1008619D8 /* ToDoItemDetailsViewController.swift in Sources */,
 				A1158CBC2B078BA30016B353 /* AppDelegate.swift in Sources */,
@@ -260,6 +270,7 @@
 				A14EC80D2B07ACE80012F5D4 /* ToDoItem.swift in Sources */,
 				A14EC8192B0A55DC0012F5D4 /* FileManagerExtension.swift in Sources */,
 				A14EC81D2B0A6E1F0012F5D4 /* ToDoItemsListViewController.swift in Sources */,
+				A16E8B442B0E67E8008619D8 /* ToDoItemData.swift in Sources */,
 				A14EC8152B07CCE40012F5D4 /* ToDoItemStore.swift in Sources */,
 				A1158CBE2B078BA30016B353 /* SceneDelegate.swift in Sources */,
 			);
@@ -269,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A16E8B402B0E673A008619D8 /* ToDoItemInputViewTests.swift in Sources */,
 				A16E8B372B0D00D9008619D8 /* ToDoItemsListViewControllerProtocolMock.swift in Sources */,
 				A14EC8132B07CC7D0012F5D4 /* ToDoItemStoreTests.swift in Sources */,
 				A14EC8112B07B54A0012F5D4 /* LocationTests.swift in Sources */,
