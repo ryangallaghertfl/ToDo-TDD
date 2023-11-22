@@ -33,6 +33,33 @@
             </objects>
             <point key="canvasLocation" x="6" y="-23"/>
         </scene>
+        <!--To Do Item Details View Controller-->
+        <scene sceneID="H2J-oY-Uo7">
+            <objects>
+                <viewController storyboardIdentifier="ToDoItemDetailsViewController" id="Bmh-4F-fT1" customClass="ToDoItemDetailsViewController" customModule="ToDo_TDD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xHA-Cc-N0l">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7L-rV-yOy">
+                                <rect key="frame" x="175" y="156" width="42" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uNd-H6-PGg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="y7L-rV-yOy" id="iPN-5G-jnd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9gC-QN-Q69" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-269.46564885496184" y="-700"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
