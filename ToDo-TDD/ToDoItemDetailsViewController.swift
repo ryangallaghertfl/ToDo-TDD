@@ -13,6 +13,8 @@ class ToDoItemDetailsViewController: UIViewController {
     @IBOutlet var dateLabel: UILabel!
     
     @IBOutlet var locationLabel: UILabel!
+    
+    @IBOutlet var descriptionLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
