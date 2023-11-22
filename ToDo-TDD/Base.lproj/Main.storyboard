@@ -68,6 +68,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxS-Nd-nSy">
+                                <rect key="frame" x="76" y="767" width="252" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Done"/>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7L-rV-yOy">
                                 <rect key="frame" x="175" y="272" width="56" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -82,6 +88,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="Owm-co-MOu" id="3Ge-O8-p7C"/>
                         <outlet property="descriptionLabel" destination="dvT-4X-LKT" id="0Er-el-khs"/>
+                        <outlet property="doneButton" destination="MxS-Nd-nSy" id="7dt-NE-rRV"/>
                         <outlet property="locationLabel" destination="n0c-FW-cyz" id="8Ql-JV-Sm2"/>
                         <outlet property="mapView" destination="ln7-Wr-5gt" id="Oga-Xa-IsB"/>
                         <outlet property="titleLabel" destination="y7L-rV-yOy" id="iPN-5G-jnd"/>

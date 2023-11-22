@@ -18,6 +18,8 @@ class ToDoItemDetailsViewController: UIViewController {
     @IBOutlet var descriptionLabel: UILabel!
     
     @IBOutlet var mapView: MKMapView!
+    
+    @IBOutlet var doneButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
