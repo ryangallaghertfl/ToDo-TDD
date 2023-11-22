@@ -92,11 +92,17 @@ final class ToDoItemsDetailsViewControllerTests: XCTestCase {
         XCTAssertEqual(center.longitude, longitude, accuracy: 0.000_01)
     }
     
-    func test_ToDoItemDetailsVC__settingToDoItem_shouldUpdateButtonState_assertsFalse() {
+    func test_ToDoItemDetailsVC_settingToDoItem_shouldUpdateButtonState_assertsFalse() {
         var toDoItem = ToDoItem(title: "dummy title")
         toDoItem.done = true
         sut.toDoItem = toDoItem
         XCTAssertFalse(sut.doneButton.isEnabled)
+    }
+    
+    func test_ToDoItemDetailsVC_settingToDoItem_whenItemNotDone_shouldUpdateButtonState_assertTrue() {
+        let toDoItem = ToDoItem(title: "dummy title")
+        sut.toDoItem = toDoItem
+        XCTAssertTrue(sut.doneButton.isEnabled)
     }
     
 }
