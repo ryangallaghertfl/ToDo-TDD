@@ -43,8 +43,13 @@ final class ToDoItemsDetailsViewControllerTests: XCTestCase {
         XCTAssertTrue(subview.isDescendant(of: sut.view))
     }
     
-    func test_ToDoItenDetailsVC_view_shouldHaveMapView_assertsTrue() throws {
+    func test_ToDoItemDetailsVC_view_shouldHaveMapView_assertsTrue() throws {
         let subview = try XCTUnwrap(sut.mapView)
+        XCTAssertTrue(subview.isDescendant(of: sut.view))
+    }
+    
+    func test_ToDoItemDetailsVC_view_shouldHaveDoneButton() throws {
+        let subview = try XCTUnwrap(sut.doneButton)
         XCTAssertTrue(subview.isDescendant(of: sut.view))
     }
     
