@@ -21,7 +21,11 @@ class ToDoItemDetailsViewController: UIViewController {
     
     @IBOutlet var doneButton: UIButton!
     
-    var toDoItem: ToDoItem?
+    var toDoItem: ToDoItem? {
+        didSet {
+            titleLabel.text = toDoItem?.title
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
