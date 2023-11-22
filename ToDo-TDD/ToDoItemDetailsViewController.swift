@@ -9,6 +9,8 @@ import UIKit
 
 class ToDoItemDetailsViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
+    
+    @IBOutlet var dateLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
