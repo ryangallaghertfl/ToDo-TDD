@@ -27,6 +27,8 @@
 		A14EC8232B0CCE230012F5D4 /* TodoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC8222B0CCE230012F5D4 /* TodoItemCell.swift */; };
 		A14EC8252B0CD63D0012F5D4 /* toDoItemCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EC8242B0CD63D0012F5D4 /* toDoItemCellTests.swift */; };
 		A16E8B372B0D00D9008619D8 /* ToDoItemsListViewControllerProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B362B0D00D9008619D8 /* ToDoItemsListViewControllerProtocolMock.swift */; };
+		A16E8B392B0E4837008619D8 /* ToDoItemsDetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B382B0E4837008619D8 /* ToDoItemsDetailsViewControllerTests.swift */; };
+		A16E8B3B2B0E48D1008619D8 /* ToDoItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B3A2B0E48D1008619D8 /* ToDoItemDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		A14EC8222B0CCE230012F5D4 /* TodoItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemCell.swift; sourceTree = "<group>"; };
 		A14EC8242B0CD63D0012F5D4 /* toDoItemCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDoItemCellTests.swift; sourceTree = "<group>"; };
 		A16E8B362B0D00D9008619D8 /* ToDoItemsListViewControllerProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemsListViewControllerProtocolMock.swift; sourceTree = "<group>"; };
+		A16E8B382B0E4837008619D8 /* ToDoItemsDetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemsDetailsViewControllerTests.swift; sourceTree = "<group>"; };
+		A16E8B3A2B0E48D1008619D8 /* ToDoItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 				A14EC8182B0A55DC0012F5D4 /* FileManagerExtension.swift */,
 				A14EC81C2B0A6E1F0012F5D4 /* ToDoItemsListViewController.swift */,
 				A14EC8222B0CCE230012F5D4 /* TodoItemCell.swift */,
+				A16E8B3A2B0E48D1008619D8 /* ToDoItemDetailsViewController.swift */,
 			);
 			path = "ToDo-TDD";
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 				A14EC81E2B0A72640012F5D4 /* ToDoItemStoreProtocolMock.swift */,
 				A14EC8242B0CD63D0012F5D4 /* toDoItemCellTests.swift */,
 				A16E8B362B0D00D9008619D8 /* ToDoItemsListViewControllerProtocolMock.swift */,
+				A16E8B382B0E4837008619D8 /* ToDoItemsDetailsViewControllerTests.swift */,
 			);
 			path = "ToDo-TDDTests";
 			sourceTree = "<group>";
@@ -240,6 +246,7 @@
 				A14EC8232B0CCE230012F5D4 /* TodoItemCell.swift in Sources */,
 				A14EC8172B09224E0012F5D4 /* Coordinate.swift in Sources */,
 				A1158CC02B078BA30016B353 /* ViewController.swift in Sources */,
+				A16E8B3B2B0E48D1008619D8 /* ToDoItemDetailsViewController.swift in Sources */,
 				A1158CBC2B078BA30016B353 /* AppDelegate.swift in Sources */,
 				A14EC80F2B07B3710012F5D4 /* Location.swift in Sources */,
 				A14EC80D2B07ACE80012F5D4 /* ToDoItem.swift in Sources */,
@@ -258,6 +265,7 @@
 				A14EC8132B07CC7D0012F5D4 /* ToDoItemStoreTests.swift in Sources */,
 				A14EC8112B07B54A0012F5D4 /* LocationTests.swift in Sources */,
 				A14EC8252B0CD63D0012F5D4 /* toDoItemCellTests.swift in Sources */,
+				A16E8B392B0E4837008619D8 /* ToDoItemsDetailsViewControllerTests.swift in Sources */,
 				A14EC80B2B07AC2D0012F5D4 /* ToDoItemTests.swift in Sources */,
 				A14EC81F2B0A72640012F5D4 /* ToDoItemStoreProtocolMock.swift in Sources */,
 				A14EC81B2B0A6D8B0012F5D4 /* ToDoItemsListViewControllerTests.swift in Sources */,
