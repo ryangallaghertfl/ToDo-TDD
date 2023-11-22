@@ -23,9 +23,15 @@ final class ToDoItemsDetailsViewControllerTests: XCTestCase {
         sut = nil
     }
     
-    func test_ToDoItemsDetailsVC_view_shouldHaveTitleLabel_assetsTruel() throws {
+    func test_ToDoItemsDetailsVC_view_shouldHaveTitleLabel_assertsTruel() throws {
         let subview = try XCTUnwrap(sut.titleLabel)
         XCTAssertTrue(subview.isDescendant(of: sut.view))
     }
+    
+    func test__ToDoItemsDetailsVC_view_shouldHaveDateLabel_assertsTrue() throws {
+        let subview = try XCTUnwrap(sut.dateLabel)
+        XCTAssertTrue(subview.isDescendant(of: sut.view))
+    }
+    
 }
 
