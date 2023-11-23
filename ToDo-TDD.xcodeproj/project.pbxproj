@@ -34,6 +34,7 @@
 		A16E8B422B0E6796008619D8 /* ToDoItemInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B412B0E6796008619D8 /* ToDoItemInputView.swift */; };
 		A16E8B442B0E67E8008619D8 /* ToDoItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B432B0E67E8008619D8 /* ToDoItemData.swift */; };
 		A16E8B462B0F95BD008619D8 /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B452B0F95BD008619D8 /* APIClientProtocol.swift */; };
+		A16E8B482B0F961D008619D8 /* APIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B472B0F961D008619D8 /* APIClientMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		A16E8B412B0E6796008619D8 /* ToDoItemInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemInputView.swift; sourceTree = "<group>"; };
 		A16E8B432B0E67E8008619D8 /* ToDoItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemData.swift; sourceTree = "<group>"; };
 		A16E8B452B0F95BD008619D8 /* APIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
+		A16E8B472B0F961D008619D8 /* APIClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				A16E8B362B0D00D9008619D8 /* ToDoItemsListViewControllerProtocolMock.swift */,
 				A16E8B382B0E4837008619D8 /* ToDoItemsDetailsViewControllerTests.swift */,
 				A16E8B3F2B0E673A008619D8 /* ToDoItemInputViewTests.swift */,
+				A16E8B472B0F961D008619D8 /* APIClientMock.swift */,
 			);
 			path = "ToDo-TDDTests";
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				A14EC80B2B07AC2D0012F5D4 /* ToDoItemTests.swift in Sources */,
 				A14EC81F2B0A72640012F5D4 /* ToDoItemStoreProtocolMock.swift in Sources */,
 				A14EC81B2B0A6D8B0012F5D4 /* ToDoItemsListViewControllerTests.swift in Sources */,
+				A16E8B482B0F961D008619D8 /* APIClientMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
