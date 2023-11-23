@@ -138,18 +138,26 @@ final class ToDoItemInputViewTests: XCTestCase {
         let delegateMock = ToDoItemInputViewDelegateMock()
         sut.delegate = delegateMock
         
-        try sut
-            .inspect()
-            .find(ViewType.Button.self, where: { view in let label = try view.labelView()
-                    .text()
-                    .string()
-                return label == "Save"
-            })
-            .tap()
+        try sut.tapButtonWith(name: "Save")
+        
         XCTAssertEqual(delegateMock.lastToDoItemData?.title, "dummy title")
         XCTAssertEqual(delegateMock.lastCoordinate?.latitude, 1)
         XCTAssertEqual(delegateMock.lastCoordinate?.longitude, 2)
     }
     
+}
 
+extension ToDoItemInputView {
+  func tapButtonWith(name: String) throws {
+    try inspect()
+      .find(ViewType.Button.self,
+            where: { view in
+        let label = try view
+          .labelView()
+          .text()
+          .string()
+        return label == name
+      })
+      .tap()
+  }
 }
