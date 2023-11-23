@@ -42,24 +42,19 @@ final class ToDoItemInputViewTests: XCTestCase {
     }
     
     func test_ToDoItemInputView_whenWithDate_shouldAllowDateInput_assertsTrue() throws {
-        let systemVersion = UIDevice.current.systemVersion
-        try XCTSkipIf(systemVersion.hasPrefix("16") || systemVersion.hasPrefix("17"), "Toggle's tap() and isOn() are currently unavailable for inspection on iOS 16 and iOS 17")
+//        let systemVersion = UIDevice.current.systemVersion
+//        try XCTSkipIf(systemVersion.hasPrefix("16") || systemVersion.hasPrefix("17"), "Toggle's tap() and isOn() are currently unavailable for inspection on iOS 16 and iOS 17")
         
-        //below is needed to make updating the @State property accessible in the test
-        let exp = sut.on(\.didAppear) { view in
-            try view.find(ViewType.Toggle.self).tap()
-            //we first switch the toggle to make the date picker appear
-            let expected = Date(timeIntervalSinceNow: 1_000_000)
-        try view //search for the DatePicker and we try to set its date
-                .find(ViewType.DatePicker.self)
-                .select(date: expected)
-        let input = self.toDoItemData.date
+        let expected = Date()
+        try sut.inspect().find(ViewType.Toggle.self).tap()
+        try sut
+            .inspect()
+            .find(ViewType.DatePicker.self)
+            .select(date: expected)
+        
+        let input = toDoItemData.date
+        
         XCTAssertEqual(input, expected)
-        }
-        //ViewInspector hosts the SUT, triggers on appear so we can use @State
-        ViewHosting.host(view: sut)
-        //wait for expectation to be fulfilled ViewInspector abstracts away fulfill()
-        wait(for: [exp], timeout: 0.1)
-        }
+    }
 
 }
