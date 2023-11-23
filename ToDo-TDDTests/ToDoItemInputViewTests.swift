@@ -42,15 +42,12 @@ final class ToDoItemInputViewTests: XCTestCase {
     }
     
     func test_ToDoItemInputView_whenWithDate_shouldAllowDateInput_assertsTrue() throws {
-//        let systemVersion = UIDevice.current.systemVersion
-//        try XCTSkipIf(systemVersion.hasPrefix("16") || systemVersion.hasPrefix("17"), "Toggle's tap() and isOn() are currently unavailable for inspection on iOS 16 and iOS 17")
         
+        let systemVersion = UIDevice.current.systemVersion
+           try XCTSkipIf(systemVersion.hasPrefix("16") || systemVersion.hasPrefix("17"), "Toggle's tap() and isOn() are currently unavailable for inspection on iOS 16 and iOS 17")
         let expected = Date()
         try sut.inspect().find(ViewType.Toggle.self).tap()
-        try sut
-            .inspect()
-            .find(ViewType.DatePicker.self)
-            .select(date: expected)
+        try sut.inspect().find(ViewType.DatePicker.self).select(date: expected)
         
         let input = toDoItemData.date
         
