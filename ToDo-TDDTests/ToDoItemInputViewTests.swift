@@ -129,5 +129,27 @@ final class ToDoItemInputViewTests: XCTestCase {
             .tap()
         XCTAssertNil(apiClientMock.coordinateAddress)
     }
+    
+    func test_ToDoItemInputView_save_shouldCallDelegate() throws {
+        toDoItemData.title = "dummy title"
+        toDoItemData.addressString = "dummy address"
+        apiClientMock.coordinateReturnValue =
+        Coordinate(latitude: 1, longitude: 2)
+        let delegateMock = ToDoItemInputViewDelegateMock()
+        sut.delegate = delegateMock
+        
+        try sut
+            .inspect()
+            .find(ViewType.Button.self, where: { view in let label = try view.labelView()
+                    .text()
+                    .string()
+                return label == "Save"
+            })
+            .tap()
+        XCTAssertEqual(delegateMock.lastToDoItemData?.title, "dummy title")
+        XCTAssertEqual(delegateMock.lastCoordinate?.latitude, 1)
+        XCTAssertEqual(delegateMock.lastCoordinate?.longitude, 2)
+    }
+    
 
 }
