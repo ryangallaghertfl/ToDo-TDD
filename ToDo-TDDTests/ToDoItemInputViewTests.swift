@@ -97,5 +97,23 @@ final class ToDoItemInputViewTests: XCTestCase {
             return label == "Save"
         }))
     }
+    
+    func test_ToDoItemInputView_saveButton_shouldFetchCoordinate_assertsTrue() throws {
+        toDoItemData.title = "dummy title"
+        let expected = "dummy address"
+        toDoItemData.addressString = expected
+        try sut
+            .inspect()
+            .find(ViewType.Button.self,
+                  where: { view in
+                let label = try view
+                    .labelView()
+                    .text()
+                    .string()
+                return label == "Save"
+                })
+            .tap()
+        XCTAssertEqual(apiClientMock.coordinateAddress, expected)
+    }
 
 }
