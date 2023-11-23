@@ -22,7 +22,7 @@ final class APIClientTests: XCTestCase {
         sut = nil
     }
     
-    func x_test_APIClient_coordinate_fetchesCoordinate() {
+    func test_APIClient_coordinate_fetchesCoordinate() {
       let geoCoderMock = GeoCoderProtocolMock()
       sut.geoCoder = geoCoderMock
       let location = CLLocation(latitude: 1,

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol APIClientProtocol {
-    func coordinate(for: String, completion: (Coordinate?) -> Void)
+    func coordinate(for: String, completion: @escaping (Coordinate?) -> Void)
 }
