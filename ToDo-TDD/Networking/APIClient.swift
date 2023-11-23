@@ -11,6 +11,7 @@ import CoreLocation
 class APIClient: APIClientProtocol {    
     //lazy keyword means that the initialiser is called the first time the property is accessed, so it has no value until it is accessed
     lazy var geoCoder: GeoCoderProtocol = CLGeocoder()
+    lazy var session: URLSessionProtocol = URLSession.shared
     
     func coordinate(
         for address: String,
@@ -27,6 +28,22 @@ class APIClient: APIClientProtocol {
             completion(coordinate)
           }
         }
+    
+    func toDoItems() async throws -> [ToDoItem] {
+        //define the URL, create a request, call data(for:delegate:) on the session property, and try to decode the result into an array of ToDoItems.
+       guard let url =
+               URL(string: "http://toodoo.app/items")
+       else {
+         return []
+       }
+       let request = URLRequest(url: url)
+       let (data, _) = try await session.data(
+         for: request,
+            delegate: nil)
+       let items = try JSONDecoder()
+         .decode([ToDoItem].self, from: data)
+       return items
+     }
 
 }
 
