@@ -20,6 +20,8 @@ struct ToDoItemInputView: View {
         }
         TextField("Description",
         text: $data.itemDescription)
+        TextField("Location name",
+                          text: $data.locationName)
     }
     }
 }
