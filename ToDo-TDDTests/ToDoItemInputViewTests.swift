@@ -53,5 +53,20 @@ final class ToDoItemInputViewTests: XCTestCase {
         
         XCTAssertEqual(input, expected)
     }
+    
+    func test_ToDoItemInputView_shouldAllowDescriptionInput_assertsTrue() throws {
+        let expected = "dummy description"
+        try sut
+            .inspect()
+            .find(ViewType.TextField.self,
+                  where: { view in
+                let label = try view
+                    .labelView()
+                    .text()
+                    .string()
+                return label == "Description"}).setInput(expected)
+        let input = toDoItemData.itemDescription
+        XCTAssertEqual(input, expected)
+    }
 
 }

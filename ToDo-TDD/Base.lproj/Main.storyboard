@@ -17,10 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="auS-bf-7qG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="auS-bf-7qG">
                                 <rect key="frame" x="76" y="362" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="tgR-e6-TqV"/>
+                                    <constraint firstAttribute="height" constant="128" id="wNn-kI-6ag"/>
+                                </constraints>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -42,23 +45,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxS-Nd-nSy">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxS-Nd-nSy">
                                 <rect key="frame" x="76" y="767" width="252" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MxS-Nd-nSy" secondAttribute="height" multiplier="36:5" id="9mL-yA-Rfd"/>
+                                    <constraint firstAttribute="height" constant="35" id="cVJ-sg-Hqy"/>
+                                    <constraint firstAttribute="width" constant="252" id="iuC-1e-nWU"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Done"/>
                                 <connections>
                                     <action selector="checkItem:" destination="Bmh-4F-fT1" eventType="touchUpInside" id="A2C-fU-ARI"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="YEE-lp-Efd">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="YEE-lp-Efd">
                                 <rect key="frame" x="76" y="80" width="240" height="384"/>
                                 <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ln7-Wr-5gt">
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ln7-Wr-5gt">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <standardMapConfiguration key="preferredConfiguration"/>
                                     </mapView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="gd6-UE-OA0">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="gd6-UE-OA0">
                                         <rect key="frame" x="0.0" y="149" width="240" height="235"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7L-rV-yOy">
@@ -88,6 +95,14 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="384" id="4vd-Fe-5Ja"/>
+                                    <constraint firstAttribute="width" secondItem="YEE-lp-Efd" secondAttribute="height" multiplier="5:8" id="Ab2-J6-eQz"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="EbT-nr-Jpk"/>
+                                    <constraint firstAttribute="width" secondItem="YEE-lp-Efd" secondAttribute="height" multiplier="5:8" id="HLW-rx-OdN"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="384" id="Jny-UV-LeE"/>
+                                    <constraint firstAttribute="width" constant="240" id="TnO-gX-Gtc"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uNd-H6-PGg"/>
