@@ -36,5 +36,9 @@ final class ToDoItemInputViewTests: XCTestCase {
         let input = toDoItemData.title
         XCTAssertEqual(input, expected)
     }
+    
+    func test_ToDoItemInputView_whenWithoutDate_shouldNotShowDateInput_throwsError() {
+    XCTAssertThrowsError(try sut.inspect().find(ViewType.DatePicker.self))
+    }
 
 }
