@@ -11,6 +11,7 @@ struct ToDoItemInputView: View {
     @ObservedObject var data:  ToDoItemData
     var didAppear: ((Self) -> Void)?
     let apiClient: APIClientProtocol
+    var delegate: ToDoItemInputViewDelegate?
     
     var body: some View {
         Form {
