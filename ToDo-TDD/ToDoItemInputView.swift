@@ -40,5 +40,6 @@ struct ToDoItemInputView: View {
 }
 
 #Preview {
-    ToDoItemInputView(data: ToDoItemData())
+    ToDoItemInputView(data: ToDoItemData(),                      apiClient: APIClient())
+        .previewLayout(.sizeThatFits))
 }
