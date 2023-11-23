@@ -83,5 +83,16 @@ final class ToDoItemInputViewTests: XCTestCase {
         let input = toDoItemData.locationName
         XCTAssertEqual(input, expected)
     }
+    
+    func test_ToDoItemInputView_shouldHaveASaveButton_noThrow() throws {
+        XCTAssertNoThrow(try sut.inspect()
+        .find(ViewType.Button.self, where: { view in
+            let label = try view
+                .labelView()
+                .text()
+                .string()
+            return label == "Save"
+        }))
+    }
 
 }
