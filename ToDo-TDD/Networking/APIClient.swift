@@ -37,3 +37,11 @@ protocol GeoCoderProtocol {
 
 //MARK: Extension to GLGeocoder allows us to use mocks in tests
 extension CLGeocoder: GeoCoderProtocol {}
+
+//MARK: define protocol to help mock URLSession for unit tests
+protocol URLSessionProtocol {
+    func data(for request: URLRequest, delegate: URLSessionTaskDelegate?) async throws -> (Data, URLResponse)
+}
+
+//MARK: URL session conforms to protocol for mock
+extension URLSession: URLSessionProtocol {}

@@ -36,7 +36,7 @@ final class APIClientTests: XCTestCase {
         result = coordinate
       }
       geoCoderMock.completionHandler?([placemark], nil)
-//heck whether the method was called with the address string we provided and whether the coordinate was passed into the completion closure of the coordinate(for:completion:) method.
+//check whether the method was called with the address string we provided and whether the coordinate was passed into the completion closure of the coordinate(for:completion:) method.
       XCTAssertEqual(result?.latitude,
                      location.coordinate.latitude)
       XCTAssertEqual(result?.longitude,
