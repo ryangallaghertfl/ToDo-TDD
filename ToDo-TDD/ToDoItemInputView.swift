@@ -36,6 +36,8 @@ struct ToDoItemInputView: View {
         }
     }
     func addToDoItem() {
+        apiClient.coordinate(for: data.addressString, completion: { coordinate in
+        })
     }
 }
 
