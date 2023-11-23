@@ -74,6 +74,21 @@ final class APIClientTests: XCTestCase {
       XCTAssertEqual(urlSessionMock.dataForDelegateRequest,
                      URLRequest(url: url))
     }
+    
+    func test_APIClient_toDoItems_whenError_shouldPassError() async throws {
+      let urlSessionMock = URLSessionProtocolMock()
+      let expected = NSError(domain: "", code: 1234, userInfo: nil)
+      urlSessionMock.dataForDelegateError = expected
+      sut.session = urlSessionMock
+      
+      do {
+        _ = try await sut.toDoItems()
+        XCTFail()
+      } catch {
+        let nsError = try XCTUnwrap(error as NSError)
+        XCTAssertEqual(nsError, expected)
+      }
+    }
 
 
    
