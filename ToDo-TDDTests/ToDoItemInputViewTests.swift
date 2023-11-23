@@ -15,15 +15,18 @@ final class ToDoItemInputViewTests: XCTestCase {
     
     var sut: ToDoItemInputView!
     var toDoItemData: ToDoItemData!
+    var apiClientMock: APIClientMock!
 
     override func setUpWithError() throws {
         toDoItemData = ToDoItemData()
-        sut = ToDoItemInputView(data: toDoItemData)
+        apiClientMock = APIClientMock()
+        sut = ToDoItemInputView(data: toDoItemData, apiClient: apiClientMock)
     }
     
     override func tearDownWithError() throws {
         sut = nil
         toDoItemData = nil
+        apiClientMock = nil
     }
 
     func test_ToDoItemInputView_titleInput_shouldSetValueInData_AssertsTrue() throws {

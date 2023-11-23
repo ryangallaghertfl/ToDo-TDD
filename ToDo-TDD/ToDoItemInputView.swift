@@ -10,6 +10,7 @@ import SwiftUI
 struct ToDoItemInputView: View {
     @ObservedObject var data:  ToDoItemData
     var didAppear: ((Self) -> Void)?
+    let apiClient: APIClientProtocol
     
     var body: some View {
         Form {
