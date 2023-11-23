@@ -26,7 +26,15 @@ struct ToDoItemInputView: View {
                 TextField("Location name", text: $data.locationName)
                 TextField("Address", text: $data.addressString)
             }
+            SwiftUI.Section {
+                Button(action: addToDoItem,
+                       label: {
+                    Text("Save")
+                })
+            }
         }
+    }
+    func addToDoItem() {
     }
 }
 
