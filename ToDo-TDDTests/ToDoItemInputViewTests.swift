@@ -115,5 +115,19 @@ final class ToDoItemInputViewTests: XCTestCase {
             .tap()
         XCTAssertEqual(apiClientMock.coordinateAddress, expected)
     }
+    
+    func test_ToDoItemInputView_save_whenAddressEmpty_shouldNotFetchCoordinate() throws {
+        toDoItemData.title = "dummy title"
+        try sut
+            .inspect()
+            .find(ViewType.Button.self, where: { view in let label = try view
+                    .labelView()
+                    .text()
+                    .string()
+                return label == "Save"
+            })
+            .tap()
+        XCTAssertNil(apiClientMock.coordinateAddress)
+    }
 
 }
