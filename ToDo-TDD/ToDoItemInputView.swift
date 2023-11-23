@@ -41,6 +41,8 @@ struct ToDoItemInputView: View {
             apiClient.coordinate(for: data.addressString, completion: { coordinate in
                 self.delegate?.addToDoItem(with: data, coordinate: coordinate)
             })
+        } else {
+            delegate?.addToDoItem(with: data, coordinate: nil)
         }
     }
 }
