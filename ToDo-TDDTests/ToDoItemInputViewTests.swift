@@ -38,10 +38,13 @@ final class ToDoItemInputViewTests: XCTestCase {
     }
     
     func test_ToDoItemInputView_whenWithoutDate_shouldNotShowDateInput_throwsError() {
-    XCTAssertThrowsError(try sut.inspect().find(ViewType.DatePicker.self))
+        XCTAssertThrowsError(try sut.inspect().find(ViewType.DatePicker.self))
     }
     
     func test_ToDoItemInputView_whenWithDate_shouldAllowDateInput_assertsTrue() throws {
+        let systemVersion = UIDevice.current.systemVersion
+        try XCTSkipIf(systemVersion.hasPrefix("16") || systemVersion.hasPrefix("17"), "Toggle's tap() and isOn() are currently unavailable for inspection on iOS 16 and iOS 17")
+        
         //below is needed to make updating the @State property accessible in the test
         let exp = sut.on(\.didAppear) { view in
             try view.find(ViewType.Toggle.self).tap()
