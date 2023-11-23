@@ -37,6 +37,8 @@
 		A16E8B482B0F961D008619D8 /* APIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B472B0F961D008619D8 /* APIClientMock.swift */; };
 		A16E8B4A2B0F97EC008619D8 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B492B0F97EC008619D8 /* APIClient.swift */; };
 		A16E8B4C2B0F9E1C008619D8 /* ToDoItemInputViewDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B4B2B0F9E1C008619D8 /* ToDoItemInputViewDelegateMock.swift */; };
+		A16E8B512B0FAC41008619D8 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B502B0FAC41008619D8 /* APIClientTests.swift */; };
+		A16E8B532B0FAD47008619D8 /* GeoCoderProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B522B0FAD47008619D8 /* GeoCoderProtocolMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		A16E8B472B0F961D008619D8 /* APIClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientMock.swift; sourceTree = "<group>"; };
 		A16E8B492B0F97EC008619D8 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		A16E8B4B2B0F9E1C008619D8 /* ToDoItemInputViewDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemInputViewDelegateMock.swift; sourceTree = "<group>"; };
+		A16E8B502B0FAC41008619D8 /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
+		A16E8B522B0FAD47008619D8 /* GeoCoderProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCoderProtocolMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,25 +128,18 @@
 		A1158CBA2B078BA30016B353 /* ToDo-TDD */ = {
 			isa = PBXGroup;
 			children = (
+				A16E8B4F2B0FABB1008619D8 /* Networking */,
+				A16E8B4E2B0FAB76008619D8 /* Views */,
+				A16E8B4D2B0FAB3B008619D8 /* Model */,
 				A1158CBB2B078BA30016B353 /* AppDelegate.swift */,
 				A1158CBD2B078BA30016B353 /* SceneDelegate.swift */,
 				A1158CBF2B078BA30016B353 /* ViewController.swift */,
-				A14EC80C2B07ACE80012F5D4 /* ToDoItem.swift */,
-				A14EC8142B07CCE40012F5D4 /* ToDoItemStore.swift */,
 				A1158CC12B078BA30016B353 /* Main.storyboard */,
 				A1158CC42B078BA40016B353 /* Assets.xcassets */,
 				A1158CC62B078BA40016B353 /* LaunchScreen.storyboard */,
 				A1158CC92B078BA40016B353 /* Info.plist */,
-				A14EC80E2B07B3710012F5D4 /* Location.swift */,
-				A14EC8162B09224E0012F5D4 /* Coordinate.swift */,
 				A14EC8182B0A55DC0012F5D4 /* FileManagerExtension.swift */,
-				A14EC81C2B0A6E1F0012F5D4 /* ToDoItemsListViewController.swift */,
-				A14EC8222B0CCE230012F5D4 /* TodoItemCell.swift */,
-				A16E8B3A2B0E48D1008619D8 /* ToDoItemDetailsViewController.swift */,
-				A16E8B412B0E6796008619D8 /* ToDoItemInputView.swift */,
-				A16E8B432B0E67E8008619D8 /* ToDoItemData.swift */,
 				A16E8B452B0F95BD008619D8 /* APIClientProtocol.swift */,
-				A16E8B492B0F97EC008619D8 /* APIClient.swift */,
 			);
 			path = "ToDo-TDD";
 			sourceTree = "<group>";
@@ -161,8 +158,41 @@
 				A16E8B3F2B0E673A008619D8 /* ToDoItemInputViewTests.swift */,
 				A16E8B472B0F961D008619D8 /* APIClientMock.swift */,
 				A16E8B4B2B0F9E1C008619D8 /* ToDoItemInputViewDelegateMock.swift */,
+				A16E8B502B0FAC41008619D8 /* APIClientTests.swift */,
+				A16E8B522B0FAD47008619D8 /* GeoCoderProtocolMock.swift */,
 			);
 			path = "ToDo-TDDTests";
+			sourceTree = "<group>";
+		};
+		A16E8B4D2B0FAB3B008619D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A14EC80C2B07ACE80012F5D4 /* ToDoItem.swift */,
+				A14EC80E2B07B3710012F5D4 /* Location.swift */,
+				A14EC8162B09224E0012F5D4 /* Coordinate.swift */,
+				A14EC8142B07CCE40012F5D4 /* ToDoItemStore.swift */,
+				A16E8B432B0E67E8008619D8 /* ToDoItemData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A16E8B4E2B0FAB76008619D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A14EC81C2B0A6E1F0012F5D4 /* ToDoItemsListViewController.swift */,
+				A14EC8222B0CCE230012F5D4 /* TodoItemCell.swift */,
+				A16E8B3A2B0E48D1008619D8 /* ToDoItemDetailsViewController.swift */,
+				A16E8B412B0E6796008619D8 /* ToDoItemInputView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A16E8B4F2B0FABB1008619D8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A16E8B492B0F97EC008619D8 /* APIClient.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,11 +327,13 @@
 				A16E8B402B0E673A008619D8 /* ToDoItemInputViewTests.swift in Sources */,
 				A16E8B372B0D00D9008619D8 /* ToDoItemsListViewControllerProtocolMock.swift in Sources */,
 				A14EC8132B07CC7D0012F5D4 /* ToDoItemStoreTests.swift in Sources */,
+				A16E8B512B0FAC41008619D8 /* APIClientTests.swift in Sources */,
 				A16E8B4C2B0F9E1C008619D8 /* ToDoItemInputViewDelegateMock.swift in Sources */,
 				A14EC8112B07B54A0012F5D4 /* LocationTests.swift in Sources */,
 				A14EC8252B0CD63D0012F5D4 /* toDoItemCellTests.swift in Sources */,
 				A16E8B392B0E4837008619D8 /* ToDoItemsDetailsViewControllerTests.swift in Sources */,
 				A14EC80B2B07AC2D0012F5D4 /* ToDoItemTests.swift in Sources */,
+				A16E8B532B0FAD47008619D8 /* GeoCoderProtocolMock.swift in Sources */,
 				A14EC81F2B0A72640012F5D4 /* ToDoItemStoreProtocolMock.swift in Sources */,
 				A14EC81B2B0A6D8B0012F5D4 /* ToDoItemsListViewControllerTests.swift in Sources */,
 				A16E8B482B0F961D008619D8 /* APIClientMock.swift in Sources */,
