@@ -13,12 +13,14 @@ struct ToDoItemInputView: View {
     var didAppear: ((Self) -> Void)?
     
     var body: some View {
-        VStack {
-            TextField("Title", text: $data.title)
-            Toggle("Add Date", isOn: $withDate)
+    VStack {
+        TextField("Title", text: $data.title)
+        Toggle("Add Date", isOn: $withDate)
+        if withDate {
             DatePicker("Date", selection: $data.date)
         }
-        .onAppear { self.didAppear?(self) }
+    }
+    .onAppear { self.didAppear?(self) }
     }
 }
 
