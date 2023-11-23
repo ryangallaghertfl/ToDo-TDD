@@ -9,9 +9,13 @@ import SwiftUI
 
 struct ToDoItemInputView: View {
     @ObservedObject var data: ToDoItemData
+    var didAppear: ((Self) -> Void)?
     
     var body: some View {
+        VStack {
         TextField("Title", text: $data.title)
+        }
+        .onAppear { self.didAppear?(self) }
     }
 }
 
