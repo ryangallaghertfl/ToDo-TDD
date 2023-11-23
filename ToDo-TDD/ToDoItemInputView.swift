@@ -16,6 +16,7 @@ struct ToDoItemInputView: View {
         VStack {
             TextField("Title", text: $data.title)
             Toggle("Add Date", isOn: $withDate)
+            DatePicker("Date", selection: $data.date)
         }
         .onAppear { self.didAppear?(self) }
     }
