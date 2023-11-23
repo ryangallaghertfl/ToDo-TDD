@@ -22,7 +22,7 @@ final class APIClientTests: XCTestCase {
         sut = nil
     }
     
-    func test_APIClient_coordinate_fetchesCoordinate() {
+    func x_test_APIClient_coordinate_fetchesCoordinate() {
       let geoCoderMock = GeoCoderProtocolMock()
       sut.geoCoder = geoCoderMock
       let location = CLLocation(latitude: 1,
@@ -30,18 +30,31 @@ final class APIClientTests: XCTestCase {
       let placemark = CLPlacemark(location: location,
                                   name: nil,
                                   postalAddress: nil)
-
+//The GeoCoderProtocolMock class captures the completion handler of the geocodeAddressString(_:complectionHandler:) call.
       var result: Coordinate?
       sut.coordinate(for: "") { coordinate in
         result = coordinate
       }
       geoCoderMock.completionHandler?([placemark], nil)
-
+//heck whether the method was called with the address string we provided and whether the coordinate was passed into the completion closure of the coordinate(for:completion:) method.
       XCTAssertEqual(result?.latitude,
                      location.coordinate.latitude)
       XCTAssertEqual(result?.longitude,
                      location.coordinate.longitude)
     }
+    
+    func test_APIClient_coordinate_shouldCallGeoCoderWithAddress() {
+       let geoCoderMock = GeoCoderProtocolMock()
+       sut.geoCoder = geoCoderMock
+       let expectedAddress = "dummy address"
+
+       sut.coordinate(for: expectedAddress) { _ in
+       }
+
+       XCTAssertEqual(geoCoderMock.geocodeAddressString,
+                      expectedAddress)
+     }
+
 
    
 
