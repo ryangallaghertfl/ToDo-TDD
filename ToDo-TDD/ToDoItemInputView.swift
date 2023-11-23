@@ -43,6 +43,12 @@ struct ToDoItemInputView: View {
     }
 }
 
+//MARK: protocol ToDoItemInputViewDelegate
+
+protocol ToDoItemInputViewDelegate {
+    func addToDoItem(with: ToDoItemData, coordinate: Coordinate?)
+}
+
 #Preview {
     ToDoItemInputView(data: ToDoItemData(), apiClient: APIClient()).previewLayout(.sizeThatFits)
 }
