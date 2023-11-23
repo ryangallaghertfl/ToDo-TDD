@@ -12,17 +12,20 @@ struct ToDoItemInputView: View {
     var didAppear: ((Self) -> Void)?
     
     var body: some View {
-    VStack {
-        TextField("Title", text: $data.title)
-        Toggle("Add Date", isOn: $data.withDate)
-        if data.withDate {
-            DatePicker("Date", selection: $data.date)
+        Form {
+            //uses SwiftUI's section type not UIKit
+            SwiftUI.Section {
+                TextField("Title", text: $data.title)
+                Toggle("Add Date", isOn: $data.withDate)
+                if data.withDate {
+                    DatePicker("Date", selection: $data.date)
+                }
+                TextField("Description", text: $data.itemDescription)
+            }
+            SwiftUI.Section {
+                TextField("Location name", text: $data.locationName)
+            }
         }
-        TextField("Description",
-        text: $data.itemDescription)
-        TextField("Location name",
-                          text: $data.locationName)
-    }
     }
 }
 
