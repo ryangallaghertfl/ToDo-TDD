@@ -29,6 +29,13 @@ final class AppCoordinatorTests: XCTestCase {
         navigationControllerMock = nil
         window = nil
     }
+    
+    func test_AppCoordinator_start_shouldSetDelegate_memoryRefIsSame() throws {
+        sut.start()
+        let listViewController = try XCTUnwrap(navigationControllerMock.lastPushedViewController as? ToDoItemsListViewController)
+        XCTAssertIdentical(listViewController.delegate as? AppCoordinator,
+        sut)
+    }
 
 
 }
