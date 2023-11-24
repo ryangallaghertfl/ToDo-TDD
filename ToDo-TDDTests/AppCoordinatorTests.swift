@@ -74,5 +74,16 @@ final class AppCoordinatorTests: XCTestCase {
         //asserts that the sut variable is assigned as the delegate of the presented instance of ToDoItemInputView
         XCTAssertIdentical(lastPresented.rootView.delegate as? AppCoordinator, sut)
     }
+    
+    func test_AppCoordinator_addToDoItemWith_shouldCallToDoItemStore() throws {
+       let toDoItemData = ToDoItemData()
+       toDoItemData.title = "dummy title"
+
+       let receivedItems = try wait(for: sut.toDoItemStore.itemPublisher, afterChange: {
+         sut.addToDoItem(with: toDoItemData, coordinate: nil)
+       })
+// after calling addToDoItem(with:coordinate:), now itemPublisher of the toDoItemStore property publishes the change to the stored items.
+       XCTAssertEqual(receivedItems.first?.title, toDoItemData.title)
+     }
 
 }
