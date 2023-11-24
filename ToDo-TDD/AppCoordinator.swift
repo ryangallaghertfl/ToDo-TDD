@@ -49,6 +49,7 @@ extension AppCoordinator: ToDoItemsListViewControllerProtocol {
         
         next.loadViewIfNeeded()
         next.toDoItem = item
+        next.toDoItemStore = toDoItemStore
         
         navigationController.pushViewController(next, animated: true)
     }
