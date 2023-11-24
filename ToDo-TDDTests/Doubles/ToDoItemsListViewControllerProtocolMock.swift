@@ -11,9 +11,16 @@ import UIKit
 class ToDoItemsListViewControllerProtocolMock: ToDoItemsListViewControllerProtocol {
     
     var selectToDoItemReceivedArguments: (viewController: UIViewController, item: ToDoItem)?
+    
+    var addToDoItemCallCount = 0
+    
     //protocol mock stores the received argument to the call of the delegate method, selectToDoItem(_:item:)
     func selectToDoItem(
     _ viewController: UIViewController, item: ToDoItem) {
         selectToDoItemReceivedArguments = (viewController, item)
+    }
+    
+    func addToDoItem(_ viewController: UIViewController) {
+        addToDoItemCallCount += 1
     }
 }
