@@ -41,6 +41,7 @@
 		A16E8B532B0FAD47008619D8 /* GeoCoderProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B522B0FAD47008619D8 /* GeoCoderProtocolMock.swift */; };
 		A16E8B552B0FB6CF008619D8 /* URLSessionProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B542B0FB6CF008619D8 /* URLSessionProtocolMock.swift */; };
 		A16E8B572B10BC6E008619D8 /* AppSetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B562B10BC6E008619D8 /* AppSetupTests.swift */; };
+		A16E8B592B10BFF8008619D8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E8B582B10BFF8008619D8 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		A16E8B522B0FAD47008619D8 /* GeoCoderProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCoderProtocolMock.swift; sourceTree = "<group>"; };
 		A16E8B542B0FB6CF008619D8 /* URLSessionProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocolMock.swift; sourceTree = "<group>"; };
 		A16E8B562B10BC6E008619D8 /* AppSetupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetupTests.swift; sourceTree = "<group>"; };
+		A16E8B582B10BFF8008619D8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				A1158CC92B078BA40016B353 /* Info.plist */,
 				A14EC8182B0A55DC0012F5D4 /* FileManagerExtension.swift */,
 				A16E8B452B0F95BD008619D8 /* APIClientProtocol.swift */,
+				A16E8B582B10BFF8008619D8 /* AppCoordinator.swift */,
 			);
 			path = "ToDo-TDD";
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				A14EC8172B09224E0012F5D4 /* Coordinate.swift in Sources */,
 				A16E8B422B0E6796008619D8 /* ToDoItemInputView.swift in Sources */,
 				A1158CC02B078BA30016B353 /* ViewController.swift in Sources */,
+				A16E8B592B10BFF8008619D8 /* AppCoordinator.swift in Sources */,
 				A16E8B3B2B0E48D1008619D8 /* ToDoItemDetailsViewController.swift in Sources */,
 				A16E8B462B0F95BD008619D8 /* APIClientProtocol.swift in Sources */,
 				A1158CBC2B078BA30016B353 /* AppDelegate.swift in Sources */,
