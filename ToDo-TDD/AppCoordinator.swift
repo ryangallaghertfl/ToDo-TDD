@@ -19,9 +19,8 @@ class AppCoordinator: Coordinator {
     private let viewController: UIViewController
     private let navigationController: UINavigationController
     
-    init(window: UIWindow?) {
-        navigationController = UINavigationController()
-        
+    init(window: UIWindow?, navigationController: UINavigationController) {
+        self.navigationController = UINavigationController()
         self.window = window
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         viewController = storyboard.instantiateViewController(withIdentifier: "ToDoItemsListViewController")

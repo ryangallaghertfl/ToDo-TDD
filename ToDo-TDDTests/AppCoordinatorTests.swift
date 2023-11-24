@@ -9,13 +9,25 @@ import XCTest
 @testable import ToDo_TDD
 
 final class AppCoordinatorTests: XCTestCase {
+    var sut: AppCoordinator!
+    var navigationControllerMock: NavigationControllerMock!
+    var window: UIWindow!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        // we create a dummy window and an instance of NavigationControllerMock, and use both to initialise an instance of AppCoordinator
+        window = UIWindow(frame: CGRect(x: 0,
+                                        y: 0,
+                                        width: 200,
+                                        height: 200))
+
+        navigationControllerMock = NavigationControllerMock()
+        sut = AppCoordinator(window: window, navigationController: navigationControllerMock)
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+        navigationControllerMock = nil
+        window = nil
     }
 
 
