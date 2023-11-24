@@ -37,11 +37,22 @@ final class AppCoordinatorTests: XCTestCase {
         sut)
     }
     
-    func test_start_shouldAssignItemStore() throws {
+    func test_AppCoordinator_start_shouldAssignItemStore() throws {
         sut.start()
         let listViewController = try XCTUnwrap(navigationControllerMock.lastPushedViewController as? ToDoItemsListViewController)
         XCTAssertNotNil(listViewController.toDoItemStore)
+    }
+    
+    func test_AppCoordinator_selectToDoItem_pushesDetails() throws {
+        let dummyViewController = UIViewController()
+        let item = ToDoItem(title: "dummy title")
         
+        //execute the delegate method and assert that an instance of ToDoItemDetailsViewController is pushed to the navigation stack and toDoItem matches that used in delegate method call
+        sut.selectToDoItem(dummyViewController, item: item)
+        
+        let detail = try XCTUnwrap(navigationControllerMock.lastPushedViewController
+        as? ToDoItemDetailsViewController)
+        XCTAssertEqual(detail.toDoItem, item)
     }
 
 
