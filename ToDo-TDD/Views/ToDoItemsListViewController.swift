@@ -44,6 +44,11 @@ class ToDoItemsListViewController: UIViewController {
         self?.update(with: items) //call update method with new snapshot of data source
         })
         tableView.delegate = self
+        
+        let addItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                         target: self,
+                                         action: #selector(add(_:)))
+           navigationItem.rightBarButtonItem = addItem
     }
     
     private func update(with items: [ToDoItem]) {
@@ -59,6 +64,10 @@ class ToDoItemsListViewController: UIViewController {
     enum Section {
         case todo
         case done
+    }
+    
+    @objc func add(_ sender: UIBarButtonItem) {
+        delegate?.addToDoItem(self)
     }
     
 }
