@@ -36,6 +36,13 @@ final class AppCoordinatorTests: XCTestCase {
         XCTAssertIdentical(listViewController.delegate as? AppCoordinator,
         sut)
     }
+    
+    func test_start_shouldAssignItemStore() throws {
+        sut.start()
+        let listViewController = try XCTUnwrap(navigationControllerMock.lastPushedViewController as? ToDoItemsListViewController)
+        XCTAssertNotNil(listViewController.toDoItemStore)
+        
+    }
 
 
 }
