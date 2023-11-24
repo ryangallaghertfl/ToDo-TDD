@@ -42,6 +42,15 @@ class AppCoordinator: Coordinator {
 //MARK: conforming to ToDoItemListViewControllerProtocol
 extension AppCoordinator: ToDoItemsListViewControllerProtocol {
     func selectToDoItem(_ viewController: UIViewController, item: ToDoItem) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let next = storyboard.instantiateViewController(withIdentifier: "ToDoItemDetailsViewController") as? ToDoItemDetailsViewController else {
+            return
+        }
+        
+        next.loadViewIfNeeded()
+        next.toDoItem = item
+        
+        navigationController.pushViewController(next, animated: true)
     }
     
 }
