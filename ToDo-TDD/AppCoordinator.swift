@@ -22,12 +22,13 @@ class AppCoordinator: Coordinator {
     
     let toDoItemStore: ToDoItemStore
     
-    init(window: UIWindow?, navigationController: UINavigationController = UINavigationController()) {
+    init(window: UIWindow?, navigationController: UINavigationController = UINavigationController(), toDoItemStore: ToDoItemStore = ToDoItemStore()) {
         self.navigationController = navigationController
         self.window = window
+        self.toDoItemStore = toDoItemStore
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         viewController = storyboard.instantiateViewController(withIdentifier: "ToDoItemsListViewController")
-        toDoItemStore = ToDoItemStore()
         }
     
     func start() {
