@@ -32,3 +32,10 @@ class AppCoordinator: Coordinator {
         window?.rootViewController = navigationController
     }
 }
+
+//MARK: conforming to ToDoItemListViewControllerProtocol
+extension AppCoordinator: ToDoItemsListViewControllerProtocol {
+    func selectToDoItem(_ viewController: UIViewController, item: ToDoItem) {
+    }
+    
+}
