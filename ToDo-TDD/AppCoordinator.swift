@@ -19,11 +19,14 @@ class AppCoordinator: Coordinator {
     private let viewController: UIViewController
     private let navigationController: UINavigationController
     
+    let toDoItemStore: ToDoItemStore
+    
     init(window: UIWindow?, navigationController: UINavigationController = UINavigationController()) {
         self.navigationController = navigationController
         self.window = window
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         viewController = storyboard.instantiateViewController(withIdentifier: "ToDoItemsListViewController")
+        toDoItemStore = ToDoItemStore()
         }
     
     func start() {
@@ -31,6 +34,7 @@ class AppCoordinator: Coordinator {
         window?.rootViewController = navigationController
         if let listViewController = viewController as? ToDoItemsListViewController {
             listViewController.delegate = self
+            listViewController.toDoItemStore = toDoItemStore
         }
     }
 }
