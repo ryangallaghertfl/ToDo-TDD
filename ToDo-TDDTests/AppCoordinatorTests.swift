@@ -22,13 +22,15 @@ final class AppCoordinatorTests: XCTestCase {
                                         height: 200))
 
         navigationControllerMock = NavigationControllerMock()
-        sut = AppCoordinator(window: window, navigationController: navigationControllerMock)
+        sut = AppCoordinator(window: window, navigationController: navigationControllerMock, toDoItemStore: ToDoItemStore(fileName: "dummy_store"))
     }
 
     override func tearDownWithError() throws {
         sut = nil
         navigationControllerMock = nil
         window = nil
+        let url = FileManager.default.documentsURL(name: "dummy_store")
+        try? FileManager.default.removeItem(at: url)
     }
     
     func test_AppCoordinator_start_shouldSetDelegate_memoryRefIsSame() throws {
