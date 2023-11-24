@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import SwiftUI
 @testable import ToDo_TDD
 
 final class AppCoordinatorTests: XCTestCase {
@@ -62,6 +63,16 @@ final class AppCoordinatorTests: XCTestCase {
         sut.selectToDoItem(dummyViewController, item: item)
         let detail = try XCTUnwrap(navigationControllerMock.lastPushedViewController as? ToDoItemDetailsViewController)
         XCTAssertIdentical(detail.toDoItemStore as? ToDoItemStore, sut.toDoItemStore)
+    }
+    
+    func test_AppCoordinator_addToDoItem_shouldPresentInputView() throws {
+        let viewControllerMock = ViewControllerMock()
+
+        sut.addToDoItem(viewControllerMock)
+
+        let lastPresented = try XCTUnwrap(viewControllerMock.lastPresented as? UIHostingController<ToDoItemInputView>)
+        //asserts that the sut variable is assigned as the delegate of the presented instance of ToDoItemInputView
+        XCTAssertIdentical(lastPresented.rootView.delegate as? AppCoordinator, sut)
     }
 
 
