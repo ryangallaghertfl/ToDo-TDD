@@ -19,8 +19,8 @@ class AppCoordinator: Coordinator {
     private let viewController: UIViewController
     private let navigationController: UINavigationController
     
-    init(window: UIWindow?, navigationController: UINavigationController) {
-        self.navigationController = UINavigationController()
+    init(window: UIWindow?, navigationController: UINavigationController = UINavigationController()) {
+        self.navigationController = navigationController
         self.window = window
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         viewController = storyboard.instantiateViewController(withIdentifier: "ToDoItemsListViewController")
@@ -29,6 +29,9 @@ class AppCoordinator: Coordinator {
     func start() {
         navigationController.pushViewController(viewController, animated: false)
         window?.rootViewController = navigationController
+        if let listViewController = viewController as? ToDoItemsListViewController {
+            listViewController.delegate = self
+        }
     }
 }
 
