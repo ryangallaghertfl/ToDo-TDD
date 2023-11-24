@@ -10,11 +10,12 @@ import XCTest
 
 final class AppSetupTests: XCTestCase {
 
-    func test_application_rootVC_shouldBeToDoItemsListViewController() {
+    func test_application_rootVC_shouldBeToDoItemsListViewController() throws {
         let application = UIApplication.shared
         let scene = application.connectedScenes.first as? UIWindowScene
         let root = scene?.windows.first?.rootViewController
-        XCTAssert(root is ToDoItemsListViewController)
+        let nav = try XCTUnwrap(root as? UINavigationController)
+        XCTAssert(nav.topViewController is ToDoItemsListViewController)
     }
 
 }
