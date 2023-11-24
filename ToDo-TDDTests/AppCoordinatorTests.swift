@@ -75,5 +75,4 @@ final class AppCoordinatorTests: XCTestCase {
         XCTAssertIdentical(lastPresented.rootView.delegate as? AppCoordinator, sut)
     }
 
-
 }

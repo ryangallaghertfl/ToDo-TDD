@@ -116,4 +116,17 @@ final class ToDoItemsListViewControllerTests: XCTestCase {
         
         XCTAssertEqual(delegateMock.selectToDoItemReceivedArguments?.item, toDoItem)
     }
+    
+    
+    func test_ToDoItemListVC_navigationBarButton_shouldCallDelegate() throws {
+        let delegateMock = ToDoItemsListViewControllerProtocolMock()
+        sut.delegate = delegateMock
+//we get the right bar button item of the sut variable and call its action on its target. This should result in a call to the addToDoItem(_:) method of the delegate
+        let addButton = sut.navigationItem.rightBarButtonItem
+        let target = try XCTUnwrap(addButton?.target)
+        let action = try XCTUnwrap(addButton?.action)
+        _ = target.perform(action, with: addButton)
+            
+        XCTAssertEqual(delegateMock.addToDoItemCallCount, 1)
+    }
 }
