@@ -54,6 +54,15 @@ final class AppCoordinatorTests: XCTestCase {
         as? ToDoItemDetailsViewController)
         XCTAssertEqual(detail.toDoItem, item)
     }
+    
+    func test_AppCoordinator_selectToDoItem_shouldSetItemStore() throws {
+        let dummyViewController = UIViewController()
+        let item = ToDoItem(title: "dummy title")
+        
+        sut.selectToDoItem(dummyViewController, item: item)
+        let detail = try XCTUnwrap(navigationControllerMock.lastPushedViewController as? ToDoItemDetailsViewController)
+        XCTAssertIdentical(detail.toDoItemStore as? ToDoItemStore, sut.toDoItemStore)
+    }
 
 
 }
