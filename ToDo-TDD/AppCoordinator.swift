@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 //MARK: Define Coordinator protocol
 protocol Coordinator {
@@ -55,6 +56,16 @@ extension AppCoordinator: ToDoItemsListViewControllerProtocol {
     }
     
     func addToDoItem(_ viewController: UIViewController) {
+        let data = ToDoItemData()
+            let next = UIHostingController(rootView: ToDoItemInputView(data: data, apiClient: APIClient(), delegate: self))
+
+            viewController.present(next, animated: true)
+        }
+}
+
+//MARK: conforms to ToDoItenInputViewDelegate
+extension AppCoordinator: ToDoItemInputViewDelegate {
+    func addToDoItem(with: ToDoItemData, coordinate: Coordinate?) {
+        
     }
-    
 }
