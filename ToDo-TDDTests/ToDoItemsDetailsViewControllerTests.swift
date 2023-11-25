@@ -115,5 +115,9 @@ final class ToDoItemsDetailsViewControllerTests: XCTestCase {
         XCTAssertEqual(storeMock.checkLastCallArgument, toDoItem)
     }
     
+    func test_ToDoItemDVC_dateFormatter_shouldNotBeNone() {
+        XCTAssertNotEqual(sut.dateFormatter.dateStyle, .none)
+    }
+    
 }
 
