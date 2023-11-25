@@ -47,19 +47,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxS-Nd-nSy">
-                                <rect key="frame" x="76" y="767" width="252" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="MxS-Nd-nSy" secondAttribute="height" multiplier="36:5" id="9mL-yA-Rfd"/>
-                                    <constraint firstAttribute="height" constant="35" id="cVJ-sg-Hqy"/>
-                                    <constraint firstAttribute="width" constant="252" id="iuC-1e-nWU"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Done"/>
-                                <connections>
-                                    <action selector="checkItem:" destination="Bmh-4F-fT1" eventType="touchUpInside" id="A2C-fU-ARI"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="YEE-lp-Efd">
                                 <rect key="frame" x="76" y="80" width="240" height="384"/>
                                 <subviews>
@@ -106,6 +93,15 @@
                                     <constraint firstAttribute="width" constant="240" id="TnO-gX-Gtc"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxS-Nd-nSy">
+                                <rect key="frame" x="76" y="600" width="252" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Done"/>
+                                <connections>
+                                    <action selector="checkItem:" destination="Bmh-4F-fT1" eventType="touchUpInside" id="A2C-fU-ARI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uNd-H6-PGg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

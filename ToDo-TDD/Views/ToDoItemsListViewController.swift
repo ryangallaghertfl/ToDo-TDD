@@ -52,6 +52,21 @@ class ToDoItemsListViewController: UIViewController {
            navigationItem.rightBarButtonItem = addItem
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        token = toDoItemStore?.itemPublisher
+          .sink(receiveValue: { [weak self] items in
+            self?.items = items
+            self?.update(with: items)
+          })
+      }
+      override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        token?.cancel()
+      }
+    
     private func update(with items: [ToDoItem]) {
         //UITableViewDiffableDataSource manages table view updates via NSDiffableDataSourceSnapshot
         var snapshot = NSDiffableDataSourceSnapshot<Section, ToDoItem>()
