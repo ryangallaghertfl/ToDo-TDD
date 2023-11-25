@@ -74,5 +74,6 @@ extension AppCoordinator: ToDoItemInputViewDelegate {
             timestamp: item.date.timeIntervalSince1970,
             location: location)
         toDoItemStore.add(toDoItem)
+        navigationController.dismiss(animated: true)
     }
 }
