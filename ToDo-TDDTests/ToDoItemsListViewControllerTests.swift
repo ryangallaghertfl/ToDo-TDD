@@ -129,4 +129,8 @@ final class ToDoItemsListViewControllerTests: XCTestCase {
             
         XCTAssertEqual(delegateMock.addToDoItemCallCount, 1)
     }
+    
+    func test_ToDoItemListVC_dateFormatter_shouldNotBeNone() {
+        XCTAssertNotEqual(sut.dateFormatter.dateStyle, .none)
+    }
 }
