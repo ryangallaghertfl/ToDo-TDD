@@ -107,8 +107,10 @@ final class ToDoItemsListViewControllerTests: XCTestCase {
         //After we have set the delegate of the system under test, we send one to-do item using itemPublisher of toDoItemStoreMock. Next, we call tableView(_:didSelectRowAt:) of the tableViews delegate. Finally, we assert that the protocol method, selectToDoItem(_:item:), got called with the selected to-do item.
         let delegateMock = ToDoItemsListViewControllerProtocolMock()
         sut.delegate = delegateMock
-        let toDoItem = ToDoItem(title: "dummy 1")
-        toDoItemStoreMock.itemPublisher.send([toDoItem])
+        var doneItem = ToDoItem(title: "done item")
+        doneItem.done = true
+        let toDoItem = ToDoItem(title: "to-do item")
+        toDoItemStoreMock.itemPublisher.send([doneItem, toDoItem])
         let tableView = try XCTUnwrap(sut.tableView)
         
         let indexPath = IndexPath(row: 0, section: 0)
