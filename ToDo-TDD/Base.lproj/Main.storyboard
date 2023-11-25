@@ -17,17 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="auS-bf-7qG">
-                                <rect key="frame" x="76" y="362" width="240" height="128"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="auS-bf-7qG">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="tgR-e6-TqV"/>
-                                    <constraint firstAttribute="height" constant="128" id="wNn-kI-6ag"/>
-                                </constraints>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="auS-bf-7qG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Obx-9g-CrM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="auS-bf-7qG" secondAttribute="trailing" id="jwI-jd-NAW"/>
+                            <constraint firstItem="auS-bf-7qG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lhq-sU-nDY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="auS-bf-7qG" secondAttribute="bottom" id="pG8-gl-jTi"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="auS-bf-7qG" id="Ucf-SO-5lf"/>
