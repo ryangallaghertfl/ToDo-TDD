@@ -22,6 +22,7 @@ class ToDoItemsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dateFormatter.dateStyle = .short
         //we initialise a diffable data source for the table view.
         dataSource = UITableViewDiffableDataSource<Section, ToDoItem>(tableView: tableView, cellProvider: { [weak self] tableView, indexPath, item in
             let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath) as! ToDoItemCell
