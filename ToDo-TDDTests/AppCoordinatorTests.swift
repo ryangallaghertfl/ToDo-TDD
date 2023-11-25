@@ -87,5 +87,13 @@ final class AppCoordinatorTests: XCTestCase {
 // after calling addToDoItem(with:coordinate:), now itemPublisher of the toDoItemStore property publishes the change to the stored items.
        XCTAssertEqual(receivedItems.first?.title, toDoItemData.title)
      }
+    
+    func test_AppCoordinator_addToDoItemWith_shouldDismissInput() {
+        let toDoItemData = ToDoItemData()
+        toDoItemData.title = "dummy title"
+        
+        sut.addToDoItem(with: toDoItemData, coordinate: nil)
+        XCTAssertEqual(navigationControllerMock.dismissCallCount, 1)
+    }
 
 }
