@@ -79,7 +79,15 @@ extension ToDoItemsListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let item = items[indexPath.row]
+        let item: ToDoItem
+        switch indexPath.section {
+            case 0:
+                let filteredItems = items.filter({ false == $0.done })
+            item = filteredItems[indexPath.row]
+        default:
+            let filteredItems = items.filter({ true == $0.done })
+            item = filteredItems[indexPath.row]
+        }
         
         delegate?.selectToDoItem(self, item: item)
     }
