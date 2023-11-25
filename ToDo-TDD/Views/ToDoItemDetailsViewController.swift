@@ -21,7 +21,11 @@ class ToDoItemDetailsViewController: UIViewController {
     
     @IBOutlet var doneButton: UIButton!
     
-    let dateFormatter = DateFormatter()
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        return formatter
+    }()
     
     var toDoItemStore: ToDoItemStoreProtocol?
     
